@@ -1,24 +1,120 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head >
+<head th:replace = "common::meta-header('New Account',~{::new-css},~{::new-theme},~{::new-carousel},~{::new-js})">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
 
 	<!-- css -->
-	<link th:fragment = "login-css" rel="stylesheet" th:href="@{/login/csslogin/loginMain.css}">
+	<link th:fragment = "new-css" rel="stylesheet" th:href="@{/login/csslogin/loginMain.css}">
 </head>
 
 <body>
 	<h1>hau</h1>
-	<div>
+
+
+	<form class="row g-3 needs-validation" th:action = "@{/save}" th:object = "${account}" method="post">
+		
+
+		<div class="col-md-4">
+		  <label for="validationCustom01" class="form-label">First name</label>
+		  <input type="text" class="form-control" id="validationCustom01" th:field = "*{firstName}" required>
+		  <div class="invalid-feedback">
+			Please enter your  first name!
+		  </div>
+		</div>
+		
+
+		<div class="col-md-4">
+		  <label for="validationCustom02" class="form-label">Last name</label>
+		  <input type="text" class="form-control" id="validationCustom02" th:field = "*{lastName}" required>
+		  <div class="invalid-feedback">
+			Please enter your last name!
+		  </div>
+		</div>
+	
+		<div class="col-md-4">
+		  <label  class="form-label">Age</label>
+		  <div class="input-group has-validation">
+			<input type="text" class="form-control" th:field = "*{age}" required>
+			<div class="invalid-feedback">
+			  Please enter your age.
+			</div>
+		  </div>
+		</div>
+		
+		<div class="col-md-6">
+		  <label for="validationCustom03" class="form-label">Adress</label>
+		  <input type="text" class="form-control" id="validationCustom03"  th:field = "*{address}" required>
+		  <div class="invalid-feedback">
+			Please provide a valid adress.
+		  </div>
+		</div>
+		
+		<div class="col-md-3">
+		  <label for="validationCustom04" class="form-label">Gender</label>
+		  <select class="form-select" id="validationCustom04" required>
+			<option selected disabled value="">Choose...</option>
+			<option  th:field = "*{gender}" value="true">Male</option>
+			<option  th:field = "*{gender}" value="false">Female</option>
+		  </select>
+		  <div class="invalid-feedback">
+			Please select your gender.
+		  </div>
+		</div>
+		
+
+		<div class="col-md-3">
+		  <label for="phone" class="form-label">Tel</label>
+		  <input type="tel" class="form-control" id="phone" name="phone" th:field = "*{tel}" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+		  <div class="invalid-feedback">
+			Please provide a valid tel.
+		  </div>
+		</div>
+
+	
+
+		<div class="col-md-3">
+			<label for="validationCustom05" class="form-label">Schools</label>
+			<input type="text" class="form-control" id="validationCustom05" th:field = "*{schools}" required>
+			<div class="invalid-feedback">
+			  Please provide a valid zip.
+			</div>
+		  </div>
+
+
+		<div class="col-12">
+		  <div class="form-check">
+			<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+			<label class="form-check-label" for="invalidCheck">
+			  Agree to terms and conditions
+			</label>
+			<div class="invalid-feedback">
+			  You must agree before submitting.
+			</div>
+		  </div>
+		</div>
+		<div class="col-12">
+		  <button class="btn btn-primary" type="submit">Submit form</button>
+		</div>
+	  </form>
+
+
+
+
+
+
+
+
+	 
+	 <!-- <div>
 		<form action="#" th:action="@{/new}" th:object="${account}" method="post">
 			<table border="0" cellpadding="10">
 				<tr>
-					<td>Account name:</td>
-					<td><input type="text" th:field="*{name}"></td>
+					<td> name:</td>
+					<td><input type="text" th:field="*{firstName}"></td>
 				</tr>
 				<tr>
 					<td>Age:</td>
@@ -32,10 +128,10 @@
 					<td>Address:</td>
 					<td><input type="text" th:field="*{address}"></td>
 				</tr>
-				<!-- <tr>
+				 <tr>
 					<td>Gender:</td>
 					<td><input type="radio" th:field="*{gender}"></td>
-				</tr> -->
+				</tr> 
 				<tr>
 					<td>Schools:</td>
 					<td><input type="text" th:field="*{schools}"></td>
@@ -46,7 +142,7 @@
 			</table>
 		</form>
 
-	</div>
+	</div> -->
 
 </body>
 
