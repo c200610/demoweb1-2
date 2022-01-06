@@ -1,0 +1,100 @@
+// not parameters
+// @mixin styleText {
+//     color: white;
+//     font-size: 13px;
+// }
+
+//parameters
+
+@mixin styleText($color, $fs, $fw) {
+    color: $color;
+    font-size: $fs;
+    font-weight: $fw;
+}
+
+@mixin styleButton($cl, $bg-cl, $bd-cl, $fs, $fw, $pd-y, $pd-x) {
+    color: $cl;
+    background-color: $bg-cl;
+    font-size: $fs;
+    font-weight: $fw;
+    padding: $pd-y $pd-x;
+    cursor: pointer;
+    border: 1px solid $bd-cl;
+}
+
+@mixin hoverButton($cl, $bg-cl, $bd-cl) {
+    color: $cl;
+    background-color: $bg-cl;
+    border: 1px solid $bd-cl;
+}
+
+@mixin styleSearch($bg-before, $bg-after, $bd-cl) {
+    .input-group {
+        background-color: $bg-before;
+
+        .form-control {
+            background-color: transparent;
+            border-color: transparent;
+            box-shadow: none;
+            transition: none;
+
+            &::placeholder {
+
+                color: $color-black-light;
+            }
+
+            &:focus {
+                background-color: $bg-after;
+                border-top-color: $bd-cl;
+                border-left-color: $bd-cl;
+                border-bottom-color: $bd-cl;
+            }
+
+            &:focus+.input-group-append {
+                .input-group-text {
+                    background-color: $bg-after;
+                    border-top-color: $bd-cl;
+                    border-right-color: $bd-cl;
+                    border-bottom-color: $bd-cl;
+                    color: $color-orange-0;
+
+                    &:hover {
+                        background-color: $color-orange-0;
+                        color: $color-white-0;
+                    }
+                }
+            }
+        }
+
+        .input-group-append {
+            .input-group-text {
+                background-color: transparent;
+                border-color: transparent;
+                color: $color-orange-0;
+                border-radius: 0;
+                height: 100%;
+                cursor: pointer;
+
+                &:hover {
+                    background-color: $color-orange-0;
+                    color: $color-white-0;
+                    border-radius: 0;
+                }
+            }
+
+        }
+    }
+}
+
+@mixin responsive($screen) {
+    @if map-has-key($map: $breakpoints, $key: $screen) {
+        $value: map-get($map: $breakpoints, $key: $screen);
+
+        @media screen and (max-width:$value) {
+            @content;
+        }
+    }
+    @else{
+        @warn "`{$screen}` isn't exist in the map";
+    }
+}

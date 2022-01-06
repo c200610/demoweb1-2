@@ -1,0 +1,29 @@
+body .loginHome {
+  background: url("../loginImage/login3.jpg");
+  height: 700px;
+  background-blend-mode: overlay;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative; }
+  body .loginHome .loginInput {
+    display: block;
+    top: 10%;
+    right: 5%;
+    width: 35%;
+    height: 55%; }
+    body .loginHome .loginInput .logoUdemy img {
+      width: 220px;
+      margin-left: 30%; }
+    body .loginHome .loginInput .buttonLogin {
+      padding: 0.375rem 9.75rem;
+      margin-left: 10%; }
+    body .loginHome .loginInput .rememberMe {
+      margin: 5px 0; }
+
+.modal-backdrop {
+  z-index: -1; }
+
+/*# sourceMappingURL=loginMain.css.map */

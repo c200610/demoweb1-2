@@ -1,0 +1,49 @@
+.students {
+    padding: $pd-4 0;
+
+    .students__content {
+        width: 90%;
+        margin: 0 auto;
+
+        h2 {
+            font-size: $fs-5;
+            margin-bottom: $mg-2;
+        }
+
+        .item {
+            height: 280px;
+
+            .students__itemBody {
+                height: 100%;
+                padding: $pd-4;
+                border: 1px solid $color-black-1;
+
+                .students__top {
+                    display: flex;
+                    margin-bottom: $mg-2 - 5;
+
+                    .students__avatar {
+                        margin-right: $mg-2 - 5;
+
+                        img {
+                            width: 64px;
+                            height: 64px;
+                            border-radius: 50%;
+                        }
+                    }
+
+                    .students__star {
+                        p {
+                            margin-bottom: 0;
+                        }
+
+                        i {
+
+                            @include styleText($color-yellow-0, $fs-1 - 1, $fw-3)
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

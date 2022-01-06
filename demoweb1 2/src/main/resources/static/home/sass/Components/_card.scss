@@ -1,0 +1,46 @@
+.card {
+    
+    .card-body {
+        padding: 1rem;
+        .card-title {
+            @include styleText($color-black-0, $fs-0, $fw-1);
+        }
+
+        .card-text {
+            @include styleText($color-grey-0, $fs-1 - 1, $fw-0);
+            margin: $mg-0 0;
+        }
+
+        .card__star {
+            i {
+                @include styleText($color-yellow-0, $fs-1 - 1, $fw-2 + 200);
+            }
+
+            .card__rate {
+                @include styleText($color-grey-0, $fs-1, $fw-1);
+            }
+
+            .card__total {
+                @include styleText($color-grey-0, $fs-1, $fw-0);
+            }
+        }
+
+        .card__price {
+            text-align: right;
+            padding: $pd-2 + 2 0;
+
+            span {
+
+                &:first-of-type {
+                    @include styleText($color-grey-0, $fs-1, $fw-0);
+                    text-decoration: line-through;
+                }
+
+                &:last-of-type {
+                    @include styleText($color-black-0, $fs-0, $fw-1);
+                }
+            }
+        }
+    }
+
+}

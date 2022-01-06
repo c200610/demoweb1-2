@@ -1,0 +1,16 @@
+.job {
+    background-color: $color-grey-6;
+
+    .job__content {
+        .row {
+            padding: $pd-0 0;
+
+            .job__item {
+                max-width: 450px;
+                margin: 0 auto;
+                text-align: center;
+                padding: 20px;
+            }
+        }
+    }
+}

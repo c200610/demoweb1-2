@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head >
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+
+	<!-- css -->
+	<link th:fragment = "login-css" rel="stylesheet" th:href="@{/login/csslogin/loginMain.css}">
+</head>
+
+<body>
+	<h1>hau</h1>
+	<div>
+		<form action="#" th:action="@{/new}" th:object="${account}" method="post">
+			<table border="0" cellpadding="10">
+				<tr>
+					<td>Account name:</td>
+					<td><input type="text" th:field="*{name}"></td>
+				</tr>
+				<tr>
+					<td>Age:</td>
+					<td><input type="text" th:field="*{age}"></td>
+				</tr>
+				<tr>
+					<td>Tel:</td>
+					<td><input type="text" th:field="*{tel}"></td>
+				</tr>
+				<tr>
+					<td>Address:</td>
+					<td><input type="text" th:field="*{address}"></td>
+				</tr>
+				<!-- <tr>
+					<td>Gender:</td>
+					<td><input type="radio" th:field="*{gender}"></td>
+				</tr> -->
+				<tr>
+					<td>Schools:</td>
+					<td><input type="text" th:field="*{schools}"></td>
+				</tr>
+				<tr>
+					<td colspan="2"><button type="submit">Save</button></td>
+				</tr>
+			</table>
+		</form>
+
+	</div>
+
+</body>
+
+
+</html>

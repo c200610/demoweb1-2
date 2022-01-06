@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:fragment="meta-header(title,link1,link2,link3,scripts)">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link th:href="@{/webjars/bootstrap/5.0.1/css/bootstrap.min.css}" rel="stylesheet">
+
+
+    <link rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css}" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- <link  th:href="@{/cssmain/home.css}" rel="stylesheet"> -->
+    <title th:inline="text">[[${title}]]</title>
+    <th:block th:replace="${link1} ?: _" />
+    <th:block th:replace="${link2} ?: _" />
+    <th:block th:replace="${link3} ?: _" />
+    <th:block th:replace="${scripts} ?: _" />
+</head>
+
+<body>
+    <script th:fragment="owl-carousel-js" th:src="/home/js/owl.carousel.min.js"></script>
+    <script th:fragment="bootstrap-js" th:src="@{/webjars/bootstrap/5.0.1/js/bootstrap.bundle.min.js}"></script>
+</body>
+
+</html>

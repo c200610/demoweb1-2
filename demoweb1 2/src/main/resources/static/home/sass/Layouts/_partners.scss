@@ -1,0 +1,15 @@
+.partners {
+    background-color: $color-grey-6;
+    padding: $pd-3 0;
+
+    .partners__content {
+        width: 70%;
+        margin: 0 auto;
+        text-align: center;
+
+        .partners__img {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
