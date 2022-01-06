@@ -1,6 +1,7 @@
 package haupx912.demoweb1;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+
 import javax.persistence.Id;
 import javax.validation.constraints.Email;
 
@@ -14,7 +15,6 @@ public class Account {
     private String firstName;
     private String lastName;
     private String userName;
-    @Email
     private String password;
     private Long age;
     private String tel;
