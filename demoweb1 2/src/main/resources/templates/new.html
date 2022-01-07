@@ -1,156 +1,128 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head th:replace = "common::meta-header('New Account',~{::new-css},~{::new-theme},~{::new-carousel},~{::new-js})">
+<head th:replace="common::meta-header('New Account',~{::new-css},~{::new-theme},~{::new-jquery},~{::new-js})">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-
+	
 	<!-- css -->
-	<link th:fragment = "new-css" rel="stylesheet" th:href="@{/login/csslogin/loginMain.css}">
+	<link th:fragment="new-css" rel="stylesheet" th:href="@{/login/css/main.css}">
+	<link th:fragment="new-theme" rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css}"/>
 </head>
 
 <body>
-	<header>
-		<img src="/login/imglogin/3.png" alt="logo">
-	</header>
 
-	<section class="newAccBody">
-		<div class="container">
-			<form class="row g-3 needs-validation" th:action = "@{/save}" th:object = "${account}" method="post">
+
+	<section class="newBody">
+
+
+		<div class="newAccForm">
+			<img class="animate__animated animate__zoomInDown" src="/login/imglogin/3.png" alt="logo">
 			
-	
-				<div class="col-md-4">
-				  <label for="validationCustom01" class="form-label">First name</label>
-				  <input type="text" class="form-control" id="validationCustom01" th:field = "*{firstName}" required>
-				  <div class="invalid-feedback">
-					Please enter your  first name!
-				  </div>
-				</div>
-				
-		
-				<div class="col-md-4">
-				  <label for="validationCustom02" class="form-label">Last name</label>
-				  <input type="text" class="form-control" id="validationCustom02" th:field = "*{lastName}" required>
-				  <div class="invalid-feedback">
-					Please enter your last name!
-				  </div>
-				</div>
-			
-				<div class="col-md-4">
-				  <label  class="form-label">Age</label>
-				  <div class="input-group has-validation">
-					<input type="text" class="form-control" th:field = "*{age}" required>
+			<h1 class="">Sign Up</h1>
+			<form class="row g-3 needs-validation container-fluid" th:action="@{/save}" th:object="${account}" method="post">
+
+
+				<div class="col-md-5">
+					<!-- <label for="validationCustom01" class="form-label">First name</label> -->
+					<input type="text" class="form-control" id="validationCustom01" th:field="*{firstName}" placeholder="First Name" required>
 					<div class="invalid-feedback">
-					  Please enter your age.
+						Please enter your first name!
 					</div>
-				  </div>
 				</div>
-				
+
+
+				<div class="col-md-5">
+					<!-- <label for="validationCustom02" class="form-label">Last name</label> -->
+					<input type="text" class="form-control" id="validationCustom02" th:field="*{lastName}" placeholder="Last Name" required>
+					<div class="invalid-feedback">
+						Please enter your last name!
+					</div>
+				</div>
+
+				<div class="col-md-2">
+					<!-- <label class="form-label">Age</label> -->
+					<div class="input-group has-validation">
+						<input type="text" class="form-control" th:field="*{age}" placeholder="Age" required>
+						<div class="invalid-feedback">
+							Please enter your age.
+						</div>
+					</div>
+				</div>
+
 				<div class="col-md-6">
-				  <label for="validationCustom03" class="form-label">Adress</label>
-				  <input type="text" class="form-control" id="validationCustom03"  th:field = "*{address}" required>
-				  <div class="invalid-feedback">
-					Please provide a valid adress.
-				  </div>
+					<!-- <label for="validationCustom03" class="form-label">Adress</label> -->
+					<input type="text" class="form-control" id="validationCustom03" th:field="*{address}" placeholder="Address" required>
+					<div class="invalid-feedback">
+						Please provide a valid adress.
+					</div>
 				</div>
-				
+
 				<div class="col-md-3">
-				  <label for="validationCustom04" class="form-label">Gender</label>
-				  <select class="form-select" id="validationCustom04" required>
-					<option selected disabled value="">Choose...</option>
-					<option  th:field = "*{gender}" value="true">Male</option>
-					<option  th:field = "*{gender}" value="false">Female</option>
-				  </select>
-				  <div class="invalid-feedback">
-					Please select your gender.
-				  </div>
+					<!-- <label for="validationCustom04" class="form-label">Gender</label> -->
+					<select class="form-select" id="validationCustom04"  required>
+						<option selected disabled >Gender</option>
+						<option th:field="*{gender}" value="true">Male</option>
+						<option th:field="*{gender}" value="false">Female</option>
+					</select>
+					<div class="invalid-feedback">
+						Please select your gender.
+					</div>
 				</div>
-				
-		
+
+
 				<div class="col-md-3">
-				  <label for="phone" class="form-label">Tel</label>
-				  <input type="text" class="form-control" id="phone" name="phone" th:field = "*{tel}" required>
-				  <div class="invalid-feedback">
-					Please provide a valid tel.
-				  </div>
+					<label for="phone" class="form-label">Tel</label>
+					<input type="text" class="form-control" id="phone" name="phone" th:field="*{tel}" required>
+					<div class="invalid-feedback">
+						Please provide a valid tel.
+					</div>
 				</div>
-		
-			
-		
-				<div class="col-md-3">
+
+
+
+				<div class="col-md-12">
 					<label for="validationCustom05" class="form-label">Schools</label>
-					<input type="text" class="form-control" id="validationCustom05" th:field = "*{schools}" required>
+					<input type="text" class="form-control" id="validationCustom05" th:field="*{schools}" required>
 					<div class="invalid-feedback">
-					  Please provide a valid zip.
+						Please provide a valid zip.
 					</div>
+				</div>
+				<!-- id and password -->
+				<div class="mb-3">
+					<label for="exampleInputEmail1" class="form-label">Email address</label>
+					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
 				  </div>
-		
-		
+				  <div class="mb-3">
+					<label for="exampleInputPassword1" class="form-label">Password</label>
+					<input type="password" class="form-control" id="exampleInputPassword1">
+				  </div>
+
 				<div class="col-12">
-				  <div class="form-check">
-					<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-					<label class="form-check-label" for="invalidCheck">
-					  Agree to terms and conditions
-					</label>
-					<div class="invalid-feedback">
-					  You must agree before submitting.
+					<div class="form-check">
+						<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+						<label class="form-check-label" for="invalidCheck">
+							Agree to terms and conditions
+						</label>
+						<div class="invalid-feedback">
+							You must agree before submitting.
+						</div>
 					</div>
-				  </div>
 				</div>
 				<div class="col-12">
-				  <button class="btn btn-primary" type="submit">Submit form</button>
+					<button class="btn btn-primary" type="submit">Submit form</button>
 				</div>
-			  </form>
-		
-		
-		
+			</form>
+
 		</div>
+
 	</section>
 
 
-
-
-
-
-
-	 
-	 <!-- <div>
-		<form action="#" th:action="@{/new}" th:object="${account}" method="post">
-			<table border="0" cellpadding="10">
-				<tr>
-					<td> name:</td>
-					<td><input type="text" th:field="*{firstName}"></td>
-				</tr>
-				<tr>
-					<td>Age:</td>
-					<td><input type="text" th:field="*{age}"></td>
-				</tr>
-				<tr>
-					<td>Tel:</td>
-					<td><input type="text" th:field="*{tel}"></td>
-				</tr>
-				<tr>
-					<td>Address:</td>
-					<td><input type="text" th:field="*{address}"></td>
-				</tr>
-				 <tr>
-					<td>Gender:</td>
-					<td><input type="radio" th:field="*{gender}"></td>
-				</tr> 
-				<tr>
-					<td>Schools:</td>
-					<td><input type="text" th:field="*{schools}"></td>
-				</tr>
-				<tr>
-					<td colspan="2"><button type="submit">Save</button></td>
-				</tr>
-			</table>
-		</form>
-
-	</div> -->
-
+	
 </body>
 
 
