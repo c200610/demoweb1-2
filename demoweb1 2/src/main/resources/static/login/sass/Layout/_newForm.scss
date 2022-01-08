@@ -1,0 +1,50 @@
+.newBody{
+    height: 100%;
+    background: url("/login/imglogin/login3.jpg");
+    position: relative;
+    .newContent {
+        text-align: center;
+        position: absolute;
+        right: -10%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        width: 30%;
+        background-color: white;
+        height: 80%;
+        .newAccForm {
+            h1 {
+                font-style: italic;
+                color: alpha($color: #5c1818);
+                text-align: center;
+                --animate-duration: 2s;
+                animation-delay: 0.5s;
+            }
+            .form-select:focus,
+            input {
+                box-shadow: none;
+                border-color: rgb(94, 93, 93);
+            }
+            input,
+            select {
+                &:focus {
+                    color: black;
+                }
+            }
+
+            #emailHelp {
+                margin-bottom: 10px;
+            }
+
+            .agree {
+                display: inline-block;
+                margin: 0;
+            }
+
+            #signinForm {
+                color: #f00707;
+                border: none;
+                background-color: white;
+            }
+        }
+    }
+}
