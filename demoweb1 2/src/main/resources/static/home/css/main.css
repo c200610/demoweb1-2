@@ -137,6 +137,11 @@ body {
         background-color: transparent; }
       .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .button--white {
         margin-right: 5px; }
+        .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .button--white a {
+          text-decoration: none; }
+      .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .button--red a {
+        text-decoration: none;
+        color: white; }
       .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .button {
         white-space: nowrap; }
 

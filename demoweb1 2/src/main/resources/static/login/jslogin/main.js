@@ -1,3 +1,5 @@
-function signUp() {
-	alert("You've successfully, now let's login!!!")
-}
+$(document).ready(function(){
+    $('#signinForm').click(function(){
+        $('#signupForm').load('/login.html')
+    })
+});

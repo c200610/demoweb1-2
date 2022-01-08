@@ -104,8 +104,18 @@
 
                 .button--white {
                     margin-right: $mg-0;
+                    a{
+                        text-decoration: none;
+                        
+                    }
                 }
-
+                .button--red{
+                    a{
+                        text-decoration: none;
+                        color: white;
+                    }
+                }
+              
                 .button {
                     white-space: nowrap;
                 }

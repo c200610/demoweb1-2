@@ -6,123 +6,149 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Document</title>
-	
+
 	<!-- css -->
 	<link th:fragment="new-css" rel="stylesheet" th:href="@{/login/css/main.css}">
-	<link th:fragment="new-theme" rel="stylesheet" th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css}"/>
+	<link th:fragment="new-theme" rel="stylesheet"
+		th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css}" />
+
+	
+
 </head>
 
 <body>
 
 
 	<section class="newBody">
+		<div class="newContent">
+			<div class="logoUstudy">
+				<img class="animate__animated animate__zoomInDown" src="/login/imglogin/3.png" alt="logo">
+			</div>
+
+			<div class="newAccForm" id="signupForm">
 
 
-		<div class="newAccForm">
-			<img class="animate__animated animate__zoomInDown" src="/login/imglogin/3.png" alt="logo">
-			
-			<h1 class="">Sign Up</h1>
-			<form class="row g-3 needs-validation container-fluid" th:action="@{/save}" th:object="${account}" method="post">
+				<h1>Sign Up</h1>
+				<form class="row g-3 needs-validation container-fluid" th:action="@{/save}" th:object="${account}"
+					method="post">
 
 
-				<div class="col-md-5">
-					<!-- <label for="validationCustom01" class="form-label">First name</label> -->
-					<input type="text" class="form-control" id="validationCustom01" th:field="*{firstName}" placeholder="First Name" required>
-					<div class="invalid-feedback">
-						Please enter your first name!
-					</div>
-				</div>
-
-
-				<div class="col-md-5">
-					<!-- <label for="validationCustom02" class="form-label">Last name</label> -->
-					<input type="text" class="form-control" id="validationCustom02" th:field="*{lastName}" placeholder="Last Name" required>
-					<div class="invalid-feedback">
-						Please enter your last name!
-					</div>
-				</div>
-
-				<div class="col-md-2">
-					<!-- <label class="form-label">Age</label> -->
-					<div class="input-group has-validation">
-						<input type="text" class="form-control" th:field="*{age}" placeholder="Age" required>
+					<div class="col-md-5">
+						<!-- <label for="validationCustom01" class="form-label">First name</label> -->
+						<input type="text" class="form-control" id="validationCustom01" th:field="*{firstName}"
+							placeholder="First Name" required>
 						<div class="invalid-feedback">
-							Please enter your age.
+							Please enter your first name!
 						</div>
 					</div>
-				</div>
-
-				<div class="col-md-6">
-					<!-- <label for="validationCustom03" class="form-label">Adress</label> -->
-					<input type="text" class="form-control" id="validationCustom03" th:field="*{address}" placeholder="Address" required>
-					<div class="invalid-feedback">
-						Please provide a valid adress.
-					</div>
-				</div>
-
-				<div class="col-md-3">
-					<!-- <label for="validationCustom04" class="form-label">Gender</label> -->
-					<select class="form-select" id="validationCustom04"  required>
-						<option selected disabled >Gender</option>
-						<option th:field="*{gender}" value="true">Male</option>
-						<option th:field="*{gender}" value="false">Female</option>
-					</select>
-					<div class="invalid-feedback">
-						Please select your gender.
-					</div>
-				</div>
 
 
-				<div class="col-md-3">
-					<label for="phone" class="form-label">Tel</label>
-					<input type="text" class="form-control" id="phone" name="phone" th:field="*{tel}" required>
-					<div class="invalid-feedback">
-						Please provide a valid tel.
-					</div>
-				</div>
-
-
-
-				<div class="col-md-12">
-					<label for="validationCustom05" class="form-label">Schools</label>
-					<input type="text" class="form-control" id="validationCustom05" th:field="*{schools}" required>
-					<div class="invalid-feedback">
-						Please provide a valid zip.
-					</div>
-				</div>
-				<!-- id and password -->
-				<div class="mb-3">
-					<label for="exampleInputEmail1" class="form-label">Email address</label>
-					<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-					<div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
-				  </div>
-				  <div class="mb-3">
-					<label for="exampleInputPassword1" class="form-label">Password</label>
-					<input type="password" class="form-control" id="exampleInputPassword1">
-				  </div>
-
-				<div class="col-12">
-					<div class="form-check">
-						<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-						<label class="form-check-label" for="invalidCheck">
-							Agree to terms and conditions
-						</label>
+					<div class="col-md-5">
+						<!-- <label for="validationCustom02" class="form-label">Last name</label> -->
+						<input type="text" class="form-control" id="validationCustom02" th:field="*{lastName}"
+							placeholder="Last Name" required>
 						<div class="invalid-feedback">
-							You must agree before submitting.
+							Please enter your last name!
 						</div>
 					</div>
-				</div>
-				<div class="col-12">
-					<button class="btn btn-primary" type="submit">Submit form</button>
-				</div>
-			</form>
 
+					<div class="col-md-2">
+						<!-- <label class="form-label">Age</label> -->
+						<div class="input-group has-validation">
+							<input type="text" class="form-control" th:field="*{age}" placeholder="Age" required>
+							<div class="invalid-feedback">
+								Please enter your age.
+							</div>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<!-- <label for="validationCustom03" class="form-label">Adress</label> -->
+						<input type="text" class="form-control" id="validationCustom03" th:field="*{address}"
+							placeholder="Address" required>
+						<div class="invalid-feedback">
+							Please provide a valid adress.
+						</div>
+					</div>
+
+					<div class="col-md-3">
+						<!-- <label for="validationCustom04" class="form-label">Gender</label> -->
+						<select class="form-select" id="validationCustom04" required>
+							<!-- <option selected="selected" value="" disabled hidden>Gender</option> -->
+							<option th:field="*{gender}" value="true">Male</option>
+							<option th:field="*{gender}" value="false">Female</option>
+						</select>
+						<div class="invalid-feedback">
+							Please select your gender.
+						</div>
+					</div>
+
+
+					<div class="col-md-3">
+						<!-- <label for="phone" class="form-label">Tel</label> -->
+						<input type="text" class="form-control" id="phone" name="phone" th:field="*{tel}"
+							placeholder="Tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+						<div class="invalid-feedback">
+							Please provide a valid tel.
+						</div>
+					</div>
+
+
+
+					<div class="col-md-12">
+						<!-- <label for="validationCustom05" class="form-label">Schools</label> -->
+						<input type="text" class="form-control" id="validationCustom05" th:field="*{schools}"
+							placeholder="Schools" required>
+						<div class="invalid-feedback">
+							Please provide a valid zip.
+						</div>
+					</div>
+					<!-- id and password -->
+					<div class="mb-3">
+						<!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+						<div id="emailHelp" class="form-text"><i class="fa fa-exclamation-triangle"></i>We'll never
+							share your email with anyone else.</div>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+							placeholder="Email" th:field="*{userName}" required>
+					</div>
+					<div class="mb-3">
+						<!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+						<input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password"
+							th:field="*{password}" required>
+					</div>
+
+					<div class="col-12 agree">
+						<div class="form-check agree">
+							<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+							<label class="form-check-label" for="invalidCheck">
+								Agree to terms and conditions
+							</label>
+							<div class="invalid-feedback">
+								You must agree before submitting.
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<button class="btn btn-primary col-9" type="submit">Submit form</button>
+
+					</div>
+
+					<p class="col-12">Already have an account? <button id="signinForm">Sign in <i
+								class="fa fa-arrow-right"></i></i></button></p>
+				</form>
+
+			</div>
 		</div>
-
 	</section>
 
+	<script>
+		$(document).ready(function () {
+			$('#signinForm').click(function () {
+				$('#signupForm').load('/login.html')
+			})
+		});
+	</script>
 
-	
 </body>
 
 

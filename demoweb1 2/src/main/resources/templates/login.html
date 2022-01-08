@@ -1,0 +1,25 @@
+<div class="signinContent">
+    <div class="logoUstudy">
+        <img class="animate__animated animate__zoomInDown" src="/login/imglogin/3.png" alt="logo">
+    </div>
+    <div class="signinForm">
+        <h1>Sign In</h1>
+
+
+        <form>
+            <div class="row mb-3">
+              <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" class="form-control" id="inputEmail3" th:field="*{userName}" required>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
+              <div class="col-sm-10">
+                <input type="password" class="form-control" id="inputPassword3" th:field="*{password}" required>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+    </div>
+</div>
