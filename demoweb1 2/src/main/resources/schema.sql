@@ -9,6 +9,6 @@ CREATE TABLE ACCOUNT (
     age INT NOT NULL,
     address VARCHAR(255) NOT NULL,
     gender  BOOLEAN NOT NULL,
-    tel BIGINT NOT NULL,
+    tel VARCHAR(255) NOT NULL,
     schools VARCHAR(255) NOT NULL
 );

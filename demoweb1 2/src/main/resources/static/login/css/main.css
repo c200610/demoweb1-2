@@ -43,12 +43,18 @@ body {
       color: black; }
     .newBody .newContent .newAccForm #emailHelp {
       margin-bottom: 10px; }
+    .newBody .newContent .newAccForm .password {
+      position: relative;
+      display: flex; }
+      .newBody .newContent .newAccForm .password .showPass {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 6px 12px;
+        margin-right: 5px;
+        color: #758882; }
     .newBody .newContent .newAccForm .agree {
       display: inline-block;
       margin: 0; }
-    .newBody .newContent .newAccForm #signinForm {
-      color: #f00707;
-      border: none;
-      background-color: white; }
 
 /*# sourceMappingURL=main.css.map */

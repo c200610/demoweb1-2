@@ -29,4 +29,11 @@ public class WebController {
 		accountService.save(account);
 		return "redirect:/";
 	}
+
+
+    @PostMapping("/login")
+	public String loginAcc(@ModelAttribute("account") Account account) {
+		
+		return "login";
+	}
 }

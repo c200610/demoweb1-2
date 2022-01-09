@@ -35,16 +35,24 @@
                 margin-bottom: 10px;
             }
 
+            .password{
+                position: relative;
+                display: flex;
+                .showPass{
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    padding: 6px 12px;
+                    margin-right: 5px;
+                    color: #758882  ;
+                }
+            }
             .agree {
                 display: inline-block;
                 margin: 0;
             }
 
-            #signinForm {
-                color: #f00707;
-                border: none;
-                background-color: white;
-            }
+           
         }
     }
 }
