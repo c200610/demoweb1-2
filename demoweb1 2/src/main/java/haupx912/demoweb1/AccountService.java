@@ -5,8 +5,11 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import lombok.RequiredArgsConstructor;
+
 
 @Service
+@RequiredArgsConstructor
 public class AccountService {
     @Autowired
     private AccountRespository accountRespository;
@@ -25,5 +28,9 @@ public class AccountService {
     public void delete(Long id){
         accountRespository.deleteById(id);
     }
+
+
+
+    
 
 }
