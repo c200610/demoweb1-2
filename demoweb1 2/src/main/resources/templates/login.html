@@ -25,14 +25,14 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<section class="newBody">
 		<div class="newContent">
 			<div class="logoUstudy">
-				<img class="animate__animated animate__zoomInDown" th:src="@{/login/imglogin/3.png}" alt="logo">
+				<img class="animate__animated animate__zoomInDown" th:src="@{/login/img/3.png}" alt="logo">
 			</div>
 
 			<div class="newAccForm" >
 
 
 				<h1>Sign in</h1>
-				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}" th:object="${account}"
+				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}"
 				method="post">
 										<!-- id and password -->
 										<div class="mb-3">
@@ -40,12 +40,12 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 											<div id="emailHelp" class="form-text"><i class="fa fa-exclamation-triangle"></i>We'll never
 												share your email with anyone else.</div>
 											<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-												placeholder="Email" th:field="*{userName}" required>
+												placeholder="Email" required>
 										</div>
 										<div class="mb-3 password">
 											<!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
 											<input  type="password" class="form-control col-10" id="password" placeholder="Password"
-												th:field="*{password}" required>
+												 required>
 					
 					
 											<!-- show password -->
@@ -81,7 +81,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<script type = "text/javascript" th:replace = "common::ajax-js"></script>
 	<script type = "text/javascript" th:replace = "common::carousel-js"></script>
 	<script type = "text/javascript" th:replace = "common::bootstrap-js"></script>
-	<script type = "text/javascript" th:fragment="signup-js" th:src="@{/login/jslogin/main.js}"></script>
+	<script type = "text/javascript" th:fragment="signup-js" th:src="@{/login/js/main.js}"></script>
 	
 	<!-- <script type="text/javascript">
         $(document).ready(function(){

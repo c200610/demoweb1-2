@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 <head th:replace="common::meta-header('New Account',~{::new-css},~{::new-theme},~{::new-jquery},~{::new-js})">
 	<meta charset="UTF-8">
@@ -13,10 +13,11 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<link th:fragment="new-theme" rel="stylesheet"
 		th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css}" />
 
-	<script type="text/javascript" th:fragment="ajax-js" th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}" ></script>
-		
+	<script type="text/javascript" th:fragment="ajax-js"
+		th:src="@{https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js}"></script>
 
-		
+
+
 </head>
 
 <body>
@@ -25,19 +26,18 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	<section class="newBody">
 		<div class="newContent">
 			<div class="logoUstudy">
-				<img class="animate__animated animate__zoomInDown" src="/login/imglogin/3.png" alt="logo">
+				<img class="animate__animated animate__zoomInDown" src="/login/img/3.png" alt="logo">
 			</div>
 
-			<div class="newAccForm" >
+			<div class="newAccForm">
 
 
 				<h1>Sign Up</h1>
-				<!-- <form class="row g-3 needs-validation container-fluid" th:action="@{/save}" th:object="${account.getRole()}"
-					method="post">
+				<form class="row g-3 needs-validation container-fluid" th:action="@{/new}"
+					th:object="${user}" method="post">
 
 
 					<div class="col-md-5">
-		
 						<input type="text" class="form-control" id="validationCustom01" th:field="*{firstName}"
 							placeholder="First Name" required>
 						<div class="invalid-feedback">
@@ -47,7 +47,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 
 					<div class="col-md-5">
-						
+
 						<input type="text" class="form-control" id="validationCustom02" th:field="*{lastName}"
 							placeholder="Last Name" required>
 						<div class="invalid-feedback">
@@ -56,9 +56,10 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 					</div>
 
 					<div class="col-md-2">
-						
+
 						<div class="input-group has-validation">
-							<input type="text" class="form-control" th:field="*{account.role.age}" placeholder="Age" required>
+							<input type="text" class="form-control" th:field="*{age}" placeholder="Age"
+								required>
 							<div class="invalid-feedback">
 								Please enter your age.
 							</div>
@@ -66,7 +67,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 					</div>
 
 					<div class="col-md-6">
-						
+
 						<input type="text" class="form-control" id="validationCustom03" th:field="*{address}"
 							placeholder="Address" required>
 						<div class="invalid-feedback">
@@ -75,11 +76,10 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 					</div>
 
 					<div class="col-md-3">
-						
-						<select class="form-select" id="validationCustom04" required>
-							
-							<option th:field="*{account.role.gender}" value="true">Male</option>
-							<option th:field="*{account.role.gender}" value="false">Female</option>
+
+						<select class="form-select" id="validationCustom04" th:field="*{gender}" required>
+							<option th:value="'male'">Male</option>
+							<option th:value="'female'">Female</option>
 						</select>
 						<div class="invalid-feedback">
 							Please select your gender.
@@ -88,7 +88,7 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 
 					<div class="col-md-3">
-						
+
 						<input type="text" class="form-control" id="phone" name="phone" th:field="*{tel}"
 							placeholder="Tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
 						<div class="invalid-feedback">
@@ -99,65 +99,63 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
 
 					<div class="col-md-12">
-						
+
 						<input type="text" class="form-control" id="validationCustom05" th:field="*{schools}"
 							placeholder="Schools" required>
 						<div class="invalid-feedback">
 							Please provide a valid zip.
 						</div>
 					</div>
-				
-				</form> -->
-				<form class="row g-3 needs-validation container-fluid" th:action="@{/new}" th:object="${account}"
-				method="post">
-										<!-- id and password -->
-										<div class="mb-3">
-											<!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
-											<div id="emailHelp" class="form-text"><i class="fa fa-exclamation-triangle"></i>We'll never
-												share your email with anyone else.</div>
-											<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-												placeholder="Email" th:field="*{userName}" required>
-										</div>
-										<div class="mb-3 password">
-											<!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
-											<input  type="password" class="form-control col-10" id="password" placeholder="Password"
-												th:field="*{password}" required>
-					
-					
-											<!-- show password -->
-					
-											<span class="showPass" onclick="showPass()"><i class="fa fa-eye"></i></span>
-										</div>
-					
-										<div class="col-12 agree">
-											<div class="form-check agree">
-												<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-												<label class="form-check-label" for="invalidCheck">
-													Agree to terms and conditions
-												</label>
-												<div class="invalid-feedback">
-													You must agree before submitting.
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<button class="btn btn-primary col-9" type="submit">Submit form</button>
-					
-										</div>
-										<!-- <input type="button" id="SignIn" value="click"> -->
-										<p class="col-12">Already have an account? <a th:href="@{/login}" >Sign In <i
-													class="fa fa-arrow-right"></i></i></a></p>
+
+					<!-- id and password -->
+					<div class="mb-3">
+						<!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+						<div id="emailHelp" class="form-text"><i class="fa fa-exclamation-triangle"></i>We'll never
+							share your email with anyone else.</div>
+						<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
+							placeholder="Email" th:field="*{userName}" required>
+					</div>
+					<div class="mb-3 password">
+						<!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+						<input type="password" class="form-control col-10" id="password" placeholder="Password"
+							 th:field="*{password}" required>
+
+
+						<!-- show password -->
+
+						<span class="showPass" onclick="showPass()"><i class="fa fa-eye"></i></span>
+					</div>
+
+					<div class="col-12 agree">
+						<div class="form-check agree">
+							<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+							<label class="form-check-label" for="invalidCheck">
+								Agree to terms and conditions
+							</label>
+							<div class="invalid-feedback">
+								You must agree before submitting.
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<button class="btn btn-primary col-9" type="submit">Submit form</button>
+					</div>
+					<p class="col-12">Already have an account? <a th:href="@{/login}">Sign In <i
+								class="fa fa-arrow-right"></i></i></a></p>
 				</form>
+
+
+
 			</div>
 		</div>
 	</section>
 
 	<!-- <script src="/login/jslogin/jquery.js"></script> -->
-	<script type = "text/javascript" th:replace = "common::ajax-js"></script>
-	<script type = "text/javascript" th:replace = "common::carousel-js"></script>
-	<script type = "text/javascript" th:replace = "common::bootstrap-js"></script>
-	<script type = "text/javascript" th:fragment="signup-js" th:src="@{/login/jslogin/main.js}"></script>
-	
+	<script type="text/javascript" th:replace="common::ajax-js"></script>
+	<script type="text/javascript" th:replace="common::carousel-js"></script>
+	<script type="text/javascript" th:replace="common::bootstrap-js"></script>
+	<script type="text/javascript" th:fragment="signup-js" th:src="@{/login/js/main.js}"></script>
+
 	<!-- <script type="text/javascript">
         $(document).ready(function(){
             $('#SignIn').click(function(){
