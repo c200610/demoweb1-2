@@ -36,7 +36,7 @@ public class User {
         @Column(name = "tel")
         private String tel;
 
-        @Column(name = "adress")
+        @Column(name = "address")
         private String address;
 
         @Column(name = "gender")
@@ -59,6 +59,7 @@ public class User {
 
         public User(String firstName, String lastName, Long age, String tel, String address, String gender,
                         String schools, String userName, String password, Collection<Role> role) {
+                                super();
                 this.firstName = firstName;
                 this.lastName = lastName;
                 this.age = age;

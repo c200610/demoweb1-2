@@ -35,7 +35,7 @@
 
 
 				<h1>Sign in</h1>
-				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}" method="post">
+				<form class="row g-3 needs-validation container-fluid" th:action="@{/home}" method="post">
 					<!-- id and password -->
 					<div class="mb-3">
 						<!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
@@ -68,7 +68,7 @@
 					</div>
 					<div class="col-12">
 						<button class="btn btn-primary col-9" type="submit">Log in</button>
-
+						
 					</div>
 					<!-- <input type="button" id="SignIn" value="click"> -->
 					<p class="col-12">Do you want to registration? <a th:href="@{/new}">Sign Up <i

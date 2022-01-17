@@ -5,7 +5,7 @@ import java.util.Collection;
 import java.util.stream.Collectors;
 
 
-import org.springframework.beans.factory.annotation.Autowired;
+
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -14,10 +14,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import haupx912.demoweb1.UserRegistration.UserRegistration;
 import haupx912.demoweb1.model.Role;
 import haupx912.demoweb1.model.User;
 import haupx912.demoweb1.repository.UserRepository;
+import haupx912.demoweb1.userregistration.UserRegistration;
 
 
 @Service

@@ -7,7 +7,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-import lombok.Data;
+
 
 @Entity
 @Table(name = "role")
@@ -31,6 +31,7 @@ public class Role {
     }
 
     public Role(String name) {
+        super();
         this.name = name;
     }
 

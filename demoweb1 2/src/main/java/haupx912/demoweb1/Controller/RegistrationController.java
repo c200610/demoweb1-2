@@ -10,13 +10,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 
-import haupx912.demoweb1.UserRegistration.UserRegistration;
+
 import haupx912.demoweb1.service.UserService;
+import haupx912.demoweb1.userregistration.UserRegistration;
 
 @Controller
-@RequestMapping("/new")
+
 public class RegistrationController {
     private UserService userService;
 
@@ -27,17 +27,17 @@ public class RegistrationController {
         this.userService = userService;
     }
 
-    @GetMapping
+    @GetMapping("/new")
     public String registrationView(Model model){
         model.addAttribute("user", new UserRegistration());
         return "new";
         }
 
-    @PostMapping
+    @PostMapping("/new")
     public String registrationView(@ModelAttribute("user") UserRegistration userRegistration){
         userRegistration.setPassword(passwordEncoder.encode(userRegistration.getPassword()));
         userService.save(userRegistration);
-        return "login";
+        return "redirect:/login";
     }
 
 }

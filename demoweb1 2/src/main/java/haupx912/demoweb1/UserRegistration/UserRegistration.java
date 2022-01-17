@@ -1,4 +1,4 @@
-package haupx912.demoweb1.UserRegistration;
+package haupx912.demoweb1.userregistration;
 
 
 import lombok.Data;
@@ -9,13 +9,14 @@ public class UserRegistration {
     private Long age;
     private String tel;
     private String address;
-    private String gender = "male";
+    private String gender;
     private String schools;
     private String userName;
     private String password;
 
     public UserRegistration(String firstName, String lastName, Long age, String tel, String address, String gender,
             String schools, String userName, String password) {
+                super();
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
@@ -28,6 +29,7 @@ public class UserRegistration {
     }
 
     public UserRegistration() {
+
     }
 
 }
