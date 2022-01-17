@@ -11,12 +11,18 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 @Controller
 public class RegistrationController {
-   
-    
 
     @GetMapping("/")
     public String homeView(){
- 
         return "index";
     }
+    @GetMapping("/new")
+    public String registrationView(){
+        return "new";
+    }
+    @GetMapping("/login")
+    public String loginView(){
+        return "login";
+    }
+
 }
