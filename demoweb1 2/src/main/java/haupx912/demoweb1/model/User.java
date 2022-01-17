@@ -54,6 +54,9 @@ public class User {
         @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
         private Collection<Role> role;
 
+        public User() {
+        }
+
         public User(String firstName, String lastName, Long age, String tel, String address, String gender,
                         String schools, String userName, String password, Collection<Role> role) {
                 this.firstName = firstName;
@@ -66,9 +69,6 @@ public class User {
                 this.userName = userName;
                 this.password = password;
                 this.role = role;
-        }
-
-        public User() {
         }
 
 }

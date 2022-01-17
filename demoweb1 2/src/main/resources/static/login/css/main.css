@@ -17,7 +17,7 @@ body {
 
 .newBody {
   height: 100%;
-  background: url("/login/imglogin/login3.jpg");
+  background: url("/login/img/login3.jpg");
   position: relative; }
   .newBody .newContent {
     text-align: center;

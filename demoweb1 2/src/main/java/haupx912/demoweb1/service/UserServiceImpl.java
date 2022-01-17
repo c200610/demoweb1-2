@@ -4,12 +4,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
+
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
+
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import haupx912.demoweb1.UserRegistration.UserRegistration;
@@ -17,28 +19,22 @@ import haupx912.demoweb1.model.Role;
 import haupx912.demoweb1.model.User;
 import haupx912.demoweb1.repository.UserRepository;
 
+
 @Service
 public class UserServiceImpl implements UserService {
-    
-    private UserRepository userRepository;
 
+    private final UserRepository userRepository;
 
-    private BCryptPasswordEncoder passwordEncoder;
 
     public UserServiceImpl(UserRepository userRepository) {
-        super();
         this.userRepository = userRepository;
     }
 
-
-
     @Override
     public User save(UserRegistration userRegistration) {
-        User user = new User(userRegistration.getFirstName(),userRegistration.getLastName(),userRegistration.getAge(),userRegistration.getTel(),userRegistration.getAddress(),userRegistration.getGender(),userRegistration.getSchools(),userRegistration.getUserName(),passwordEncoder.encode(userRegistration.getPassword()),Arrays.asList(new Role("user_role")));
+        User user = new User(userRegistration.getFirstName(),userRegistration.getLastName(),userRegistration.getAge(),userRegistration.getTel(),userRegistration.getAddress(),userRegistration.getGender(),userRegistration.getSchools(),userRegistration.getUserName(),userRegistration.getPassword(),Arrays.asList(new Role("user_role")));
         return userRepository.save(user) ;
     }
-
-
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {

@@ -1,22 +1,25 @@
 <!DOCTYPE html>
-<html  xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 
-<head th:replace="common::meta-header('Log In',~{::new-css},~{::new-theme},~{::new-jquery},~{::new-js})">
+<head th:replace="common::meta-header('Log In',~{::login-css},~{::login-theme},~{::login-bootstrap},~{::login-js})">
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>Page</title>
 
 	<!-- css -->
-	<link th:fragment="new-css" rel="stylesheet" th:href="@{/login/css/main.css}">
-	<link th:fragment="new-theme" rel="stylesheet"
+	<link th:fragment="login-theme" rel="stylesheet"
 		th:href="@{https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css}" />
 
-	
-		
+	<link th:fragment="login-bootstrap"
+		th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css}" rel="stylesheet"
+		integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<link th:fragment="login-css" rel="stylesheet" th:href="@{/login/css/main.css}">
 
-		
+
+
+
 </head>
 
 <body>
@@ -28,49 +31,48 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 				<img class="animate__animated animate__zoomInDown" th:src="@{/login/img/3.png}" alt="logo">
 			</div>
 
-			<div class="newAccForm" >
+			<div class="newAccForm">
 
 
 				<h1>Sign in</h1>
-				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}"
-				method="post">
-										<!-- id and password -->
-										<div class="mb-3">
-											<!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
-											<div id="emailHelp" class="form-text"><i class="fa fa-exclamation-triangle"></i>We'll never
-												share your email with anyone else.</div>
-											<input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp"
-												placeholder="Email" required>
-										</div>
-										<div class="mb-3 password">
-											<!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
-											<input  type="password" class="form-control col-10" id="password" placeholder="Password"
-												 required>
-					
-					
-											<!-- show password -->
-					
-											<span class="showPass" onclick="showPass()"><i class="fa fa-eye"></i></span>
-										</div>
-					
-										<div class="col-12 agree">
-											<div class="form-check agree">
-												<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
-												<label class="form-check-label" for="invalidCheck">
-													Agree to terms and conditions
-												</label>
-												<div class="invalid-feedback">
-													You must agree before submitting.
-												</div>
-											</div>
-										</div>
-										<div class="col-12">
-											<button class="btn btn-primary col-9" type="submit">Submit form</button>
-					
-										</div>
-										<!-- <input type="button" id="SignIn" value="click"> -->
-										<p class="col-12">Do you want to registration? <a th:href="@{/new}" >Sign Up <i
-													class="fa fa-arrow-right"></i></i></a></p>
+				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}" method="post">
+					<!-- id and password -->
+					<div class="mb-3">
+						<!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
+						<div id="emailHelp" class="form-text"><i class="fa fa-exclamation-triangle"></i>We'll never
+							share your email with anyone else.</div>
+						<input type="email" name="userName" class="form-control" id="userName"
+							aria-describedby="emailHelp" placeholder="Email" required>
+					</div>
+					<div class="mb-3 password">
+						<!-- <label for="exampleInputPassword1" class="form-label">Password</label> -->
+						<input type="password" name="password" class="form-control col-10" id="password"
+							placeholder="Password" required>
+
+
+						<!-- show password -->
+
+						<span class="showPass" onclick="showPass()"><i class="fa fa-eye"></i></span>
+					</div>
+
+					<div class="col-12 agree">
+						<div class="form-check agree">
+							<input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+							<label class="form-check-label" for="invalidCheck">
+								Agree to terms and conditions
+							</label>
+							<div class="invalid-feedback">
+								You must agree before submitting.
+							</div>
+						</div>
+					</div>
+					<div class="col-12">
+						<button class="btn btn-primary col-9" type="submit">Log in</button>
+
+					</div>
+					<!-- <input type="button" id="SignIn" value="click"> -->
+					<p class="col-12">Do you want to registration? <a th:href="@{/new}">Sign Up <i
+								class="fa fa-arrow-right"></i></i></a></p>
 				</form>
 
 			</div>
@@ -78,11 +80,11 @@ xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
 	</section>
 
 	<!-- <script src="/login/jslogin/jquery.js"></script> -->
-	<script type = "text/javascript" th:replace = "common::ajax-js"></script>
-	<script type = "text/javascript" th:replace = "common::carousel-js"></script>
-	<script type = "text/javascript" th:replace = "common::bootstrap-js"></script>
-	<script type = "text/javascript" th:fragment="signup-js" th:src="@{/login/js/main.js}"></script>
-	
+	<script type="text/javascript" th:replace="common::ajax-js"></script>
+	<script type="text/javascript" th:replace="common::carousel-js"></script>
+	<script type="text/javascript" th:replace="common::bootstrap-js"></script>
+	<script type="text/javascript" th:fragment="signup-js" th:src="@{/login/js/main.js}"></script>
+
 	<!-- <script type="text/javascript">
         $(document).ready(function(){
             $('#SignIn').click(function(){
