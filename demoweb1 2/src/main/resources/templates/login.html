@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head th:replace="common::meta-header('Log In',~{::login-css},~{::login-theme},~{::login-bootstrap},~{::login-js})">
 	<meta charset="UTF-8">
@@ -35,13 +35,13 @@
 
 
 				<h1>Sign in</h1>
-				<form class="row g-3 needs-validation container-fluid" th:action="@{/home}" method="post">
+				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}" method="post">
 					<!-- id and password -->
 					<div class="mb-3">
 						<!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
 						<div id="emailHelp" class="form-text"><i class="fa fa-exclamation-triangle"></i>We'll never
 							share your email with anyone else.</div>
-						<input type="email" name="userName" class="form-control" id="userName"
+						<input type="email" name="username" class="form-control" id="username" 
 							aria-describedby="emailHelp" placeholder="Email" required>
 					</div>
 					<div class="mb-3 password">
@@ -78,7 +78,13 @@
 			</div>
 		</div>
 	</section>
-
+	<script type="text/javascript">
+		var newPage;
+		function openPage() {
+			newPage = window.open("");
+		}
+	</script>
+	
 	<!-- <script src="/login/jslogin/jquery.js"></script> -->
 	<script type="text/javascript" th:replace="common::ajax-js"></script>
 	<script type="text/javascript" th:replace="common::carousel-js"></script>
@@ -93,6 +99,7 @@
         });
     </script>
 	 -->
+	 
 </body>
 
 

@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+	xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head th:replace="common::meta-header('New Account',~{::new-css},~{::new-theme},~{::new-bootstrap},~{::new-js})">
 	<meta charset="UTF-8">
@@ -29,7 +29,10 @@
 			</div>
 
 			<div class="newAccForm">
-
+				<div th:if="${param.success}">
+					<div class="alert alert-info">You've successfully registered
+						to our awesome app!</div>
+				</div>
 
 				<h1>Sign Up</h1>
 				<form class="row g-3 needs-validation container-fluid" th:action="@{/new}"
