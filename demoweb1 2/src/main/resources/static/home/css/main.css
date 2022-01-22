@@ -35,12 +35,11 @@ body {
     display: flex;
     align-items: center;
     padding-left: 0; }
-    .myNavbar .myNavbar__left .navbar-brand {
+    .myNavbar .myNavbar__left img {
       flex-grow: 1;
       text-align: center;
-      margin-right: 0; }
-      .myNavbar .myNavbar__left .navbar-brand img {
-        width: 110px; }
+      margin-right: 0;
+      width: 110px; }
     .myNavbar .myNavbar__left .myNavbar__categories {
       flex-grow: 1;
       text-align: center;

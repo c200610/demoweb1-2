@@ -6,15 +6,15 @@
         align-items: center;
         padding-left: 0;
 
-        .navbar-brand {
-            flex-grow: 1;
-            text-align: center;
-            margin-right: 0;
-
+        // .navbar-brand {
+            
             img {
+                flex-grow: 1;
+                text-align: center;
+                margin-right: 0;
                 width: 110px;
             }
-        }
+        // }
 
         .myNavbar__categories {
             flex-grow: 1;
