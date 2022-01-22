@@ -32,8 +32,10 @@
 			</div>
 
 			<div class="newAccForm">
-
-
+				<!-- Wrong username or password -->
+				<div th:if="${param.error}">
+					<div class="alert alert-danger"> Wrong username or password, please try again !</div>
+				</div>
 				<h1>Sign in</h1>
 				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}" method="post">
 					<!-- id and password -->
