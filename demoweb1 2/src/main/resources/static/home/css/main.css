@@ -129,7 +129,22 @@ body {
       line-height: 20px;
       border-radius: 50%; }
       .myNavbar .myNavbar__right .navbar-nav .myNavbar__cart .nav-link {
-        font-size: 20px; }
+        font-size: 20px;
+        position: relative; }
+        .myNavbar .myNavbar__right .navbar-nav .myNavbar__cart .nav-link span {
+          position: absolute;
+          top: 50%;
+          display: inline-block;
+          left: 50%;
+          background: #ec5252;
+          color: white;
+          border-radius: 50%;
+          width: 20px;
+          height: 22px;
+          text-align: center;
+          opacity: 1; }
+          .myNavbar .myNavbar__right .navbar-nav .myNavbar__cart .nav-link span p {
+            margin: 0; }
     .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons {
       display: flex; }
       .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons:hover {

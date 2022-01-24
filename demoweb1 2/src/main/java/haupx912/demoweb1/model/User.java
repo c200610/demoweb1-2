@@ -54,6 +54,9 @@ public class User {
         @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
         private Collection<Role> role;
 
+        @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+        @JoinTable(name = "user_corse", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
+        private Collection<Course> courses;
         public User() {
         }
 
@@ -71,5 +74,24 @@ public class User {
                 this.password = password;
                 this.role = role;
         }
+
+        public User(String firstName, String lastName, Long age, String tel, String address, String gender,
+                        String schools, String userName, String password, Collection<Role> role,
+                        Collection<Course> courses) {
+                                super();
+
+                this.firstName = firstName;
+                this.lastName = lastName;
+                this.age = age;
+                this.tel = tel;
+                this.address = address;
+                this.gender = gender;
+                this.schools = schools;
+                this.userName = userName;
+                this.password = password;
+                this.role = role;
+                this.courses = courses;
+        }
+        
 
 }

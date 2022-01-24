@@ -57,30 +57,33 @@
 
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active business">
-                        <a class="nav-link" href="#">Udemy for Business </a>
+                        <a class="nav-link" href="#">Ustudy for Business </a>
                         <div class="overlay">
-                            <p>Get your team access to Udemy’s top 2,500 courses anytime, anywhere.</p>
-                            <a href="#">Try Udemy For Business</a>
+                            <p>Get your team access to Ustudy top 2,500 courses anytime, anywhere.</p>
+                            <a href="#">Try Ustudy For Business</a>
                         </div>
                     </li>
                     <li class="nav-item instructor">
                         <a class="nav-link" href="#">Become an Instructor</a>
                         <div class="overlay">
-                            <p>Get your team access to Udemy’s top 2,500 courses anytime, anywhere.</p>
-                            <a href="#">Try Udemy For Business</a>
+                            <p>Get your team access to Ustudy top 2,500 courses anytime, anywhere.</p>
+                            <a href="#">Try Ustudy For Business</a>
                         </div>
                     </li>
 
                     <li class="nav-item myNavbar__cart">
-                        <a class="nav-link " href="#"><i class="fa fa-shopping-cart"></i></a>
+                        <a class="nav-link " href="#"><i class="fa fa-shopping-cart"></i><span><p>0
+                            
+                        </p></span></a>
                     </li>
                     <li id="user" class="nav-item myNavbar__buttons" >
                         <button class=" button button--red">
-                            <a href="" sec:authentication="principal.username"></a>
+                            <a th:href="@{/info/{username}(username = ${#authentication.name})}" th:text="${#authentication.name}"> </a>
                         </button>
 
                     </li>
                     <!-- <li class="nav-item myNavbar__buttons" hidden>
+                        sec:authentication="principal.username"
                         <button class="button button--white"><a href="/login">Sign In</a></button>
                         <button class="button button--red "><a href="./new">Sign Up</a></button>
                     </li> -->
@@ -1001,16 +1004,16 @@
                 <div class="col-6 border-right">
                     <div class="job__item">
                         <h2>Become an Instructor</h2>
-                        <p>Top instructors from around the world teach millions of students on Udemy. We provide the
+                        <p>Top instructors from around the world teach millions of students on Ustudy. We provide the
                             tools and skills to teach what you love.</p>
                         <button class="button--red">Start teaching today</button>
                     </div>
                 </div>
                 <div class="col-6">
                     <div class="job__item">
-                        <h2>Udemy for Business</h2>
-                        <p>Get unlimited access to 4,000+ of Udemy's top courses for your team.</p>
-                        <button class="button--red">Get Udemy for Business</button>
+                        <h2>Ustudy for Business</h2>
+                        <p>Get unlimited access to 4,000+ of Ustudy's top courses for your team.</p>
+                        <button class="button--red">Get Ustudy for Business</button>
                     </div>
                 </div>
             </div>
@@ -1023,13 +1026,13 @@
                 <div class="col-9">
                     <ul class="nav flex-column">
                         <li class="nav-item ">
-                            <a class="nav-link active bold" href="#">Udemy for Business</a>
+                            <a class="nav-link active bold" href="#">Ustudy for Business</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link bold" href="#">Teach on Udemy</a>
+                            <a class="nav-link bold" href="#">Teach on Ustudy</a>
                         </li>
                         <li class="nav-item ">
-                            <a class="nav-link" href="#">Udemy app</a>
+                            <a class="nav-link" href="#">Ustudy app</a>
                         </li>
                         <li class="nav-item ">
                             <a class="nav-link" href="#">About us</a>
@@ -1079,8 +1082,8 @@
         <div class="footer__bottom">
             <div class="row">
                 <div class="col-6">
-                    <img src="/home/img/logo-coral.svg" alt="logo">
-                    <span>Copyright © 2020 Udemy, Inc.</span>
+                    <img src="/home/img/1.png" alt="logo">
+                    <span>Copyright © 2020 Ustudy, Inc.</span>
                 </div>
                 <div class="col-6">
                     <ul class="nav justify-content-end">
@@ -1168,7 +1171,8 @@
         var typed6 = new Typed('#course_modal_designer', {
             strings: ['- Designer : Nguyen Chung Hau^1000\n `- Class: 2k` ^1000\n `- Student_code: C200610`'],
             typeSpeed: 40,
-            backSpeed: 0,
+            backSpeed: 0
+            ,
             loop: true
         });
 

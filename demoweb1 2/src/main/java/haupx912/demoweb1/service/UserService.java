@@ -9,5 +9,5 @@ import haupx912.demoweb1.userregistration.UserRegistration;
 
 public interface UserService extends UserDetailsService{
     User save(UserRegistration userRegistration);
-    
+    User getInfo(String username);
 }

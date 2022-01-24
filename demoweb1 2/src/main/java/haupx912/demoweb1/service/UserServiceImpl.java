@@ -38,11 +38,13 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-        User user = userRepository.findByUserName(username);
+       User user = userRepository.findByUserName(username);
         if (user == null) {
             log.error("Error when login by username: ", username);
             throw new UsernameNotFoundException("Invalid username or password.");
         }
+        // return new
+        // haupx912.demoweb1.service.UserInfo(user.getFirstName(),user.getLastName(),user.getAge(),user.getAddress(),user.getGender(),user.getUserName(),user.getPassword(),user.getTel(),user.getSchools(),user.getCourses(),mapRolesToAutherites(user.getRole()));
         return new org.springframework.security.core.userdetails.User(user.getUserName(), user.getPassword(),
                 mapRolesToAutherites(user.getRole()));
     }
@@ -50,5 +52,14 @@ public class UserServiceImpl implements UserService {
     private Collection<? extends GrantedAuthority> mapRolesToAutherites(Collection<Role> roles) {
         return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
     }
-    
+
+    @Override
+    public User getInfo(String username) {
+        User user = userRepository.findByUserName(username);
+        log.error("Error when login by username: ", username);
+        return user;
+    }
+
+
+
 }
