@@ -1,0 +1,18 @@
+body{
+position: relative;
+    .info {
+        position: absolute;
+        background: url("/userInfo/img/program.jpeg") no-repeat;
+        background-size: cover;
+        height: 900px;
+        top: 97px;
+        left: 0;
+        width: 100%;
+        .body_info{
+            width: 50%;
+            background-color: #f1f1f1;
+            transform: translate(50%, 50%);
+        }
+    }
+    
+}

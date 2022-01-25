@@ -1,0 +1,28 @@
+.header_text{
+    .line{
+        font-weight: 700;
+        font-size: 1.5em;
+        
+       
+            &::after{
+                content: '';
+                
+                display: block;
+                width: 0;
+                height: 3px;
+                background: linear-gradient(to right, #fbbd61, #ec7532);
+                transition: all 0.5s;
+            }
+            &:hover::after{
+                width: 100%;
+                
+            }
+            &:hover .nav-link{
+                color:orange;
+            }
+            .nav-link{
+                color:  black;
+                cursor: pointer;
+            }
+    }
+}

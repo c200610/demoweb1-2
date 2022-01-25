@@ -1,0 +1,55 @@
+html, body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+.header .navbar {
+  background-color: white !important; }
+  .header .navbar .header_content {
+    background-color: white;
+    height: 88px; }
+    .header .navbar .header_content .header_logo {
+      margin-right: 2em;
+      padding-bottom: 0; }
+      .header .navbar .header_content .header_logo img {
+        flex-grow: 1;
+        text-align: center;
+        margin-right: 0;
+        width: 183px; }
+    .header .navbar .header_content .header_text .nav-item {
+      margin-right: 2em; }
+
+body {
+  position: relative; }
+  body .info {
+    position: absolute;
+    background: url("/userInfo/img/program.jpeg") no-repeat;
+    background-size: cover;
+    height: 900px;
+    top: 97px;
+    left: 0;
+    width: 100%; }
+    body .info .body_info {
+      width: 50%;
+      background-color: #f1f1f1;
+      transform: translate(50%, 50%); }
+
+.header_text .line {
+  font-weight: 700;
+  font-size: 1.5em; }
+  .header_text .line::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(to right, #fbbd61, #ec7532);
+    transition: all 0.5s; }
+  .header_text .line:hover::after {
+    width: 100%; }
+  .header_text .line:hover .nav-link {
+    color: orange; }
+  .header_text .line .nav-link {
+    color: black;
+    cursor: pointer; }
+
+/*# sourceMappingURL=main.css.map */

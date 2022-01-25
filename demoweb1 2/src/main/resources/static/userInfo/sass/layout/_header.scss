@@ -1,0 +1,26 @@
+.header{
+    .navbar{
+        background-color: white!important;
+        .header_content{
+            background-color: white;
+            height: 88px;
+            .header_logo{
+                margin-right: 2em;
+                padding-bottom: 0;
+                img{
+                    flex-grow: 1;
+                    text-align: center;
+                    margin-right: 0;
+                    width: 183px;
+                }
+            }
+
+            .header_text{
+                
+                .nav-item{
+                    margin-right: 2em;
+                }
+            }
+        }
+    }
+}

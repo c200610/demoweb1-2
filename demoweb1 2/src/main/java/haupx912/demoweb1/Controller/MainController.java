@@ -1,20 +1,27 @@
 package haupx912.demoweb1.controller;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import haupx912.demoweb1.model.User;
+import haupx912.demoweb1.repository.UserRepository;
 import haupx912.demoweb1.service.UserService;
 
 
 @Controller
 
 public class MainController {
+    @Autowired
     private UserService userService;
+    @Autowired
+    private UserRepository userRepository;
 
 
     @GetMapping("/login")
@@ -30,8 +37,13 @@ public class MainController {
     @GetMapping("/info/{username}")
     public ModelAndView getInfomation(@PathVariable(name = "username")String username){
         ModelAndView mav = new ModelAndView("info");
-        User user = userService.getInfo(username);
-        mav.addObject("user", user);
+        
+        mav.addObject("user", userService.getInfo(username));
         return mav;
+    }
+    @PostMapping("/info")
+    public String updateInfo(@ModelAttribute("user") User user){
+        userRepository.save(user);
+        return "info";
     }
 }

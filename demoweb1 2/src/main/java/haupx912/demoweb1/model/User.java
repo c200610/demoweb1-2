@@ -13,9 +13,12 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
+import javax.validation.constraints.NotNull;
+
+import org.springframework.validation.annotation.Validated;
 
 import lombok.Data;
-
+@Validated
 @Entity
 @Data
 @Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "user_name"))
@@ -23,7 +26,7 @@ public class User {
         @Id
         @GeneratedValue(strategy = GenerationType.IDENTITY)
         private Long id;
-
+        
         @Column(name = "first_name")
         private String firstName;
 
@@ -44,9 +47,10 @@ public class User {
 
         @Column(name = "schools")
         private String schools;
+        @NotNull
         @Column(name = "user_name")
         private String userName;
-
+        @NotNull
         @Column(name = "password")
         private String password;
 

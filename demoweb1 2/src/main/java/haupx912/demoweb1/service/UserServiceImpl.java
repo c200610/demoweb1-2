@@ -55,9 +55,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getInfo(String username) {
-        User user = userRepository.findByUserName(username);
-        log.error("Error when login by username: ", username);
-        return user;
+        return userRepository.findByUserName(username);
     }
 
 
