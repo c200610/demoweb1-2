@@ -25,7 +25,7 @@ body {
     position: absolute;
     background: url("/userInfo/img/program.jpeg") no-repeat;
     background-size: cover;
-    height: 900px;
+    height: 840px;
     top: 97px;
     left: 0;
     width: 100%; }
@@ -33,6 +33,81 @@ body {
       width: 50%;
       background-color: #f1f1f1;
       transform: translate(50%, 50%); }
+      body .info .body_info h1 {
+        text-align: center;
+        margin-bottom: 1em; }
+      body .info .body_info .info_item {
+        margin-bottom: 1em; }
+      body .info .body_info .info_button {
+        margin-bottom: 1em; }
+        body .info .body_info .info_button .btn {
+          margin-left: 12%; }
+
+.cost {
+  height: 840px;
+  background-color: #F8F9FA; }
+  .cost .cost_content {
+    margin: 3rem 8rem 0; }
+    .cost .cost_content .cost_left {
+      height: 500px; }
+    .cost .cost_content .cost_right {
+      height: 500px;
+      margin-left: auto;
+      align-items: flex-end;
+      overflow: auto; }
+      .cost .cost_content .cost_right .card {
+        padding: 0;
+        margin-bottom: 1rem; }
+        .cost .cost_content .cost_right .card .row {
+          margin: 0; }
+          .cost .cost_content .cost_right .card .row .card-right p {
+            font-size: 12px;
+            font-weight: 700; }
+          .cost .cost_content .cost_right .card .row .card-right span {
+            font-size: 12px; }
+
+.cost_1 {
+  background: url("/userInfo/img/kh1.jpg");
+  background-size: cover;
+  height: 8rem;
+  background-repeat: no-repeat;
+  padding: 0; }
+
+.cost_2 {
+  background: url("/userInfo/img/kh2.jpg");
+  background-size: cover;
+  height: 8rem;
+  background-repeat: no-repeat; }
+
+.cost_3 {
+  background: url("/userInfo/img/kh3.jpg");
+  background-size: cover;
+  height: 8rem;
+  background-repeat: no-repeat; }
+
+.cost_4 {
+  background: url("/userInfo/img/kh4.jpg");
+  background-size: cover;
+  height: 8rem;
+  background-repeat: no-repeat; }
+
+.cost_5 {
+  background: url("/userInfo/img/kh5.jpg");
+  background-size: cover;
+  height: 8rem;
+  background-repeat: no-repeat; }
+
+.cost_6 {
+  background: url("/userInfo/img/kh6.jpg");
+  background-size: cover;
+  height: 8rem;
+  background-repeat: no-repeat; }
+
+.cost_7 {
+  background: url("/userInfo/img/kh8.jpg");
+  background-size: cover;
+  height: 8rem;
+  background-repeat: no-repeat; }
 
 .header_text .line {
   font-weight: 700;

@@ -46,7 +46,7 @@
 
     </header>
 
-    <section  id="cost" class="cost" th:replace = "userCost::cost" ></section>
+    <section   th:replace = "userCost::cost" ></section>
 
 
     <section class="info" id="info">
@@ -56,7 +56,7 @@
                 method="post">
 
 
-                <div class="col-md-5">
+                <div class="col-md-5 info_item">
                     <input type="text" class="form-control" id="validationCustom01" th:field="*{firstName}"
                         placeholder="First Name" required>
                     <div class="invalid-feedback">
@@ -65,7 +65,7 @@
                 </div>
 
 
-                <div class="col-md-5">
+                <div class="col-md-5 info_item">
 
                     <input type="text" class="form-control" id="validationCustom02" th:field="*{lastName}"
                         placeholder="Last Name" required>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-2">
+                <div class="col-md-2 info_item">
 
                     <div class="input-group has-validation">
                         <input type="text" class="form-control" th:field="*{age}" placeholder="Age" required>
@@ -84,7 +84,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-md-6 info_item">
 
                     <input type="text" class="form-control" id="validationCustom03" th:field="*{address}"
                         placeholder="Address" required>
@@ -93,7 +93,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-3">
+                <div class="col-md-3 info_item">
 
                     <select class="form-select" id="validationCustom04" th:field="*{gender}" required>
                         <option th:value="'male'">Male</option>
@@ -105,7 +105,7 @@
                 </div>
 
 
-                <div class="col-md-3">
+                <div class="col-md-3 info_item">
 
                     <input type="text" class="form-control" id="phone" name="phone" th:field="*{tel}" placeholder="Tel"
                         pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
@@ -116,7 +116,7 @@
 
 
 
-                <div class="col-md-12">
+                <div class="col-md-6 info_item">
 
                     <input type="text" class="form-control" id="validationCustom05" th:field="*{schools}"
                         placeholder="Schools" required>
@@ -124,7 +124,7 @@
                         Please provide a valid zip.
                     </div>
                 </div>
-                <div class="col-md-12">
+                <div class="col-md-6 info_item">
 
                     <input type="text" class="form-control" id="validationCustom06" th:field="*{userName}"
                         placeholder="Schools" required>
@@ -132,8 +132,8 @@
                         Please provide a valid zip.
                     </div>
                 </div>
-                <div class="col-12">
-                    <button class="btn btn-primary col-9" type="submit">Submit form</button>
+                <div class="col-12 info_button">
+                    <button class="btn btn-primary col-9 " type="submit">Submit form</button>
                 </div>
             </form>
         </div>

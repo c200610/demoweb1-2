@@ -1,112 +1,130 @@
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
-    xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
 
 <head th:replace="common::meta-header('Log In',~{::login-css},~{::login-theme},~{::login-bootstrap},~{::login-js})">
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
 </head>
 
 <body>
-    <section th:fragment = "cost" >
-        <div class="container">
-            <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
-              <div class="card" style="width: 18rem;">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
-                </div>
-              </div>
+  <section th:fragment="cost" id="cost" class="cost">
+    <div class="container-fluid">
+      <div class="row cost_content ">
 
+        
         </div>
-    </section>
-    <script type="text/javascript" th:replace="common::ajax-js"></script>
-    <script type="text/javascript" th:replace="common::carousel-js"></script>
-    <script type="text/javascript" th:replace="common::bootstrap-js"></script>
-    <script type="text/javascript" th:fragment="signup-js" th:src="@{/login/js/main.js}"></script>
+        <div class="cost_right col-3 border bg-light ">
+
+          <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example"
+            tabindex="0">
+
+            <div class="card mt-3 container">
+              <div class="row">
+
+
+                <div class="card-left cost_1 col-7">
+
+                </div>
+                <div class="card-right col-5">
+                  <p>The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert</p>
+                  <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-3">
+
+              <div class="row">
+
+                <div class="card-left cost_2 col-7">
+
+                </div>
+                <div class="card-right col-5">
+                  <p>Microsoft Excel - Excel from Beginner to Advanced</p>
+                  <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="card mt-3">
+
+              <div class="row">
+
+                <div class="card-left cost_3 col-7">
+
+                </div>
+                <div class="card-right col-5">
+                  <p>
+                    Advanced CSS and Sass: Flexbox, Grid, Animations and More!</p>
+                  <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-3">
+
+              <div class="row">
+
+                <div class="card-left cost_4 col-7">
+
+                </div>
+                <div class="card-right col-5">
+                  <p>Manga Art School: How to draw Anime and Manga Course</p>
+                  <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-3">
+
+              <div class="row">
+
+                <div class="card-left cost_5 col-7">
+
+                </div>
+                <div class="card-right col-5">
+                  <p>Bootstrap Bootcamp (featuring Bootstrap 5)</p>
+                  <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-3">
+
+              <div class="row">
+
+                <div class="card-left cost_6 col-7">
+
+                </div>
+                <div class="card-right col-5">
+                  <p>React - The Complete Guide (incl Hooks, React Router, Redux)</p>
+                  <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                </div>
+              </div>
+            </div>
+            <div class="card mt-3">
+
+              <div class="row">
+
+                <div class="card-left cost_7 col-7">
+
+                </div>
+                <div class="card-right col-5">
+                  <p>Photoshop for Beginners - Learn by Doing</p>
+                  <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript" th:replace="common::ajax-js"></script>
+  <script type="text/javascript" th:replace="common::carousel-js"></script>
+  <script type="text/javascript" th:replace="common::bootstrap-js"></script>
+  <script type="text/javascript" th:fragment="signup-js" th:src="@{/login/js/main.js}"></script>
 </body>
 
 </html>

@@ -17,3 +17,33 @@ function truncateString(str, num) {
         return str.slice(0, num) + "...";
     }
 }
+
+
+
+let cart = document.querySelectorAll('.add-cart');
+for(let i = 0; i < cart.length; i++){
+    cart[i].addEventListener( 'click', () =>{
+        cartNumber();
+    })
+}
+
+function cartNumber(){
+    let productNumbers = sessionStorage.getItem('cartNumbers',1);
+    productNumbers = parseInt(productNumbers);
+    if(productNumbers){
+        sessionStorage.setItem('cartNumbers', productNumbers +1);
+        document.querySelector('.myNavbar__cart p').textContent = productNumbers +1;
+    }else{
+        sessionStorage.setItem('cartNumbers', 1);
+        document.querySelector('.myNavbar__cart p').textContent = 1;
+    }
+}
+
+
+function onloadCartNumber(){
+    let productNumbers = sessionStorage.getItem('cartNumbers');
+    if(productNumbers){
+        document.querySelector('.myNavbar__cart p').textContent = productNumbers;
+    }
+}
+onloadCartNumber();

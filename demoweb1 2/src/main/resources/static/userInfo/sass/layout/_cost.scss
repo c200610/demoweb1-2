@@ -1,0 +1,35 @@
+.cost{
+    height: 840px;
+    background-color: #F8F9FA;
+    .cost_content{
+        margin: 3rem 8rem 0;
+        .cost_left{
+            
+            height: 500px;
+        }
+        .cost_right{
+            
+            height: 500px;
+            margin-left: auto;
+            align-items: flex-end;
+            overflow: auto;
+            .card{
+                padding: 0;
+                margin-bottom: 1rem;
+                .row{
+                    margin: 0;
+                    .card-right{
+                        p{
+                            font-size: 12px;
+                            font-weight: 700;
+                        }
+                        span{
+                            font-size: 12px;
+                        }
+                    }
+                }
+            }
+            
+        }
+    }
+}
