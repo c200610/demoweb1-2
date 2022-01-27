@@ -1,9 +1,15 @@
-package haupx912.demoweb1.userregistration;
+package haupx912.demoweb1.UserRegistration;
 
 
+import haupx912.demoweb1.model.User;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class UserRegistration {
+    private Long id;
     private String firstName;
     private String lastName;
     private Long age;
@@ -14,22 +20,16 @@ public class UserRegistration {
     private String userName;
     private String password;
 
-    public UserRegistration(String firstName, String lastName, Long age, String tel, String address, String gender,
-            String schools, String userName, String password) {
-                super();
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.age = age;
-        this.tel = tel;
-        this.address = address;
-        this.gender = gender;
-        this.schools = schools;
-        this.userName = userName;
-        this.password = password;
+    public User updateUserInfo(User user){
+        user.setFirstName(this.firstName);
+        user.setLastName(this.lastName);
+        user.setAge(this.age);
+        user.setTel(this.tel);
+        user.setAddress(this.address);
+        user.setGender(this.gender);
+        user.setSchools(this.schools);
+        // user.setPassword(newPassword);
+        
+        return user;
     }
-
-    public UserRegistration() {
-
-    }
-
 }

@@ -120,13 +120,13 @@
                     background-color: transparent;
                 }
 
-                .button--white {
-                    margin-right: $mg-0;
-                    a{
-                        text-decoration: none;
+                // .button--white {
+                //     margin-right: $mg-0;
+                //     a{
+                //         text-decoration: none;
                         
-                    }
-                }
+                //     }
+                // }
                 .button--red{
                     a{
                         text-decoration: none;
@@ -136,6 +136,13 @@
               
                 .button {
                     white-space: nowrap;
+                }
+                .dropdown-menu{
+                    a{
+                        letter-spacing: 1px;
+                        font-weight: 500;
+                        padding: 4px 35px;
+                    }
                 }
             }
         }

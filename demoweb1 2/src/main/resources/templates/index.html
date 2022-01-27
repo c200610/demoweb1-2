@@ -57,10 +57,10 @@
 
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active business">
-                        <a class="nav-link" href="#">Ustudy for Business </a>
+                        <a class="nav-link" href="#development">Ustudy for Development </a>
                         <div class="overlay">
                             <p>Get your team access to Ustudy top 2,500 courses anytime, anywhere.</p>
-                            <a href="#">Try Ustudy For Business</a>
+                            <a href="#development">Try Ustudy For Development</a>
                         </div>
                     </li>
                     <li class="nav-item instructor">
@@ -76,17 +76,16 @@
                             
                         </p></span></a>
                     </li>
-                    <li id="user" class="nav-item myNavbar__buttons" >
-                        <button class=" button button--red">
-                            <a th:href="@{/info/{username}(username = ${#authentication.name})}" th:text="${#authentication.name}"> </a>
-                        </button>
 
-                    </li>
-                    <!-- <li class="nav-item myNavbar__buttons" hidden>
-                        sec:authentication="principal.username"
-                        <button class="button button--white"><a href="/login">Sign In</a></button>
-                        <button class="button button--red "><a href="./new">Sign Up</a></button>
-                    </li> -->
+                    <div class="dropdown nav-item myNavbar__buttons">
+                        <button class=" dropdown-toggle button button--red" type="button" id="dropdownMenuUser" data-toggle="dropdown" aria-expanded="false" th:text="${#authentication.name}">
+                            
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuUser">
+                          <a class="dropdown-item" th:href="@{/info/{username}(username = ${#authentication.name})}">Information <i class="fa fa-user-edit"></i></a>
+                          <a class="dropdown-item" th:href="@{logout}">Log Out <i class="fa fa-sign-out-alt"></i></a>
+                        </div>
+                      </div>
                 </ul>
             </div>
         </nav>

@@ -1,4 +1,7 @@
-package haupx912.demoweb1.controller;
+package haupx912.demoweb1.Controller;
+
+
+import java.util.Optional;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,13 +13,15 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import haupx912.demoweb1.UserRegistration.UserRegistration;
 import haupx912.demoweb1.model.User;
 import haupx912.demoweb1.repository.UserRepository;
 import haupx912.demoweb1.service.UserService;
+import lombok.extern.slf4j.Slf4j;
 
 
 @Controller
-
+@Slf4j
 public class MainController {
     @Autowired
     private UserService userService;
@@ -31,7 +36,7 @@ public class MainController {
 
     @GetMapping("/")
     public String homeView() {
-
+   
         return "index";
     }
     @GetMapping("/info/{username}")
@@ -42,7 +47,13 @@ public class MainController {
         return mav;
     }
     @PostMapping("/info")
-    public String updateInfo(@ModelAttribute("user") User user){
+    public String updateInfo(@ModelAttribute("user") UserRegistration userRequest){
+        Optional<User> userDb = userRepository.findById(userRequest.getId());
+        if (userDb.isEmpty()) {
+            log.error("Can't find user by id {}", userRequest.getId());
+            return "info";
+        }
+        User user = userRequest.updateUserInfo(userDb.get());
         userRepository.save(user);
         return "info";
     }

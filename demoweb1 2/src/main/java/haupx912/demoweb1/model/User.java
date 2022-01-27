@@ -56,16 +56,17 @@ public class User {
 
         @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
         @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-        private Collection<Role> role;
+        private Collection<Role> roles;
 
-        @ManyToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-        @JoinTable(name = "user_corse", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
+        @ManyToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+        @JoinTable(name = "users_corses", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
         private Collection<Course> courses;
+        
         public User() {
         }
 
         public User(String firstName, String lastName, Long age, String tel, String address, String gender,
-                        String schools, String userName, String password, Collection<Role> role) {
+                        String schools, String userName, String password) {
                                 super();
                 this.firstName = firstName;
                 this.lastName = lastName;
@@ -76,12 +77,11 @@ public class User {
                 this.schools = schools;
                 this.userName = userName;
                 this.password = password;
-                this.role = role;
+
         }
 
         public User(String firstName, String lastName, Long age, String tel, String address, String gender,
-                        String schools, String userName, String password, Collection<Role> role,
-                        Collection<Course> courses) {
+                        String schools, String userName, String password,Collection<Role> roles, Collection<Course> courses) {
                                 super();
 
                 this.firstName = firstName;
@@ -93,7 +93,7 @@ public class User {
                 this.schools = schools;
                 this.userName = userName;
                 this.password = password;
-                this.role = role;
+                this.roles = roles;
                 this.courses = courses;
         }
         

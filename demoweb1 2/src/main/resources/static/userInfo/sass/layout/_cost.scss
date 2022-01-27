@@ -1,11 +1,15 @@
 .cost{
-    height: 840px;
+    height: 825px;
     background-color: #F8F9FA;
     .cost_content{
-        margin: 3rem 8rem 0;
+        padding: 3rem 8rem 0;
         .cost_left{
             
             height: 500px;
+            iframe{
+                width: 100%;
+                height: 100%;
+            }
         }
         .cost_right{
             

@@ -1,4 +1,4 @@
-package haupx912.demoweb1.controller;
+package haupx912.demoweb1.Controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import haupx912.demoweb1.service.UserService;
-import haupx912.demoweb1.userregistration.UserRegistration;
+import haupx912.demoweb1.UserRegistration.UserRegistration;
 
 @Controller
 

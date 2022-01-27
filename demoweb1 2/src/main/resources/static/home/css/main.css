@@ -149,15 +149,15 @@ body {
       display: flex; }
       .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons:hover {
         background-color: transparent; }
-      .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .button--white {
-        margin-right: 5px; }
-        .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .button--white a {
-          text-decoration: none; }
       .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .button--red a {
         text-decoration: none;
         color: white; }
       .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .button {
         white-space: nowrap; }
+      .myNavbar .myNavbar__right .navbar-nav .myNavbar__buttons .dropdown-menu a {
+        letter-spacing: 1px;
+        font-weight: 500;
+        padding: 4px 35px; }
 
 @media screen and (min-width: 1200px) and (max-width: 1355px) {
   .myNavbar .myNavbar__right {

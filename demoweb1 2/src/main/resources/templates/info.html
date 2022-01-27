@@ -32,10 +32,13 @@
                             <a class="nav-link active" aria-current="page"  onclick="infoClick()">Information</a>
                         </li>
                         <li class="nav-item line">
+                            <a class="nav-link active" aria-current="page"  onclick="changepasswordClick()">Change Password</a>
+                        </li>
+                        <li class="nav-item line">
                             <a class="nav-link"  onclick="costClick()">Your Cost</a>
                         </li>
                         <li class="nav-item line">
-                            <a class="nav-link" href="#">Log out</a>
+                            <a class="nav-link" th:href="@{/logout}">Log out</a>
                         </li>
 
                         </li>
@@ -50,12 +53,12 @@
 
 
     <section class="info" id="info">
-        <div class="modal-body body_info ">
+        <div class="modal-body body_info " id="body_info">
             <h1>Information</h1>
             <form class="row g-3 needs-validation container-fluid" th:action="@{/info}" th:object="${user}"
                 method="post">
 
-
+                <input type="text"   th:field="*{id}" hidden>
                 <div class="col-md-5 info_item">
                     <input type="text" class="form-control" id="validationCustom01" th:field="*{firstName}"
                         placeholder="First Name" required>
@@ -124,12 +127,15 @@
                         Please provide a valid zip.
                     </div>
                 </div>
-                <div class="col-md-6 info_item">
-
-                    <input type="text" class="form-control" id="validationCustom06" th:field="*{userName}"
-                        placeholder="Schools" required>
-                    <div class="invalid-feedback">
-                        Please provide a valid zip.
+                <div class="col-12 agree">
+                    <div class="form-check agree">
+                        <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                        <label class="form-check-label" for="invalidCheck">
+                            Agree to terms and conditions
+                        </label>
+                        <div class="invalid-feedback">
+                            You must agree before submitting.
+                        </div>
                     </div>
                 </div>
                 <div class="col-12 info_button">

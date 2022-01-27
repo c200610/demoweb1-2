@@ -25,7 +25,7 @@ body {
     position: absolute;
     background: url("/userInfo/img/program.jpeg") no-repeat;
     background-size: cover;
-    height: 840px;
+    height: 830px;
     top: 97px;
     left: 0;
     width: 100%; }
@@ -44,12 +44,15 @@ body {
           margin-left: 12%; }
 
 .cost {
-  height: 840px;
+  height: 825px;
   background-color: #F8F9FA; }
   .cost .cost_content {
-    margin: 3rem 8rem 0; }
+    padding: 3rem 8rem 0; }
     .cost .cost_content .cost_left {
       height: 500px; }
+      .cost .cost_content .cost_left iframe {
+        width: 100%;
+        height: 100%; }
     .cost .cost_content .cost_right {
       height: 500px;
       margin-left: auto;

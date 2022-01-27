@@ -36,8 +36,11 @@
 				<div th:if="${param.error}">
 					<div class="alert alert-danger"> Wrong username or password, please try again !</div>
 				</div>
+				<div th:if="${param.success}">
+					<div class="alert alert-primary"> You have successfully logged out !</div>
+				</div>
 				<h1>Sign in</h1>
-				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}" method="post">
+				<form class="row g-3 needs-validation container-fluid" th:action="@{/login}"  method="post">
 					<!-- id and password -->
 					<div class="mb-3">
 						<!-- <label for="exampleInputEmail1" class="form-label">Email address</label> -->
