@@ -1,12 +1,11 @@
 package haupx912.demoweb1.service;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.GrantedAuthority;
+// import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -54,9 +53,9 @@ public class UserServiceImpl implements UserService {
         .collect(Collectors.toList()));
     }
 
-    private Collection<? extends GrantedAuthority> mapRolesToAutherites(Collection<Role> roles) {
-        return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
-    }
+    // private Collection<? extends GrantedAuthority> mapRolesToAutherites(Collection<Role> roles) {
+    //     return roles.stream().map(role -> new SimpleGrantedAuthority(role.getName())).collect(Collectors.toList());
+    // }
 
     @Override
     public User getInfo(String username) {

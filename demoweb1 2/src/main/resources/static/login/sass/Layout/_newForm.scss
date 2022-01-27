@@ -2,15 +2,16 @@
     height: 100%;
     background: url("/login/img/login3.jpg");
     position: relative;
+    background-size: cover;
     .newContent {
         text-align: center;
         position: absolute;
         right: -10%;
         top: 50%;
         transform: translate(-50%, -50%);
-        width: 30%;
+        width: 35%;
         background-color: white;
-        height: 80%;
+        height: 90%;
         .newAccForm {
             h1 {
                 font-style: italic;
@@ -18,6 +19,9 @@
                 text-align: center;
                 --animate-duration: 2s;
                 animation-delay: 0.5s;
+            }
+            .form-select{
+                border-color: #5e5d5d;
             }
             .form-select:focus,
             input {
@@ -53,6 +57,83 @@
             }
 
            
+        }
+    }
+}
+
+
+
+//Responsive
+
+
+@media screen  and (max-width: 1420px) {
+    .newBody{
+        .newContent{
+            width: 40%;
+            height: 95%;
+        }
+    }
+}
+@media screen and (max-width: 1275px) {
+    .newBody{
+        .newContent{
+            width: 35%;
+            right: -12%;
+            height: 95%;
+
+        }
+    }
+}
+@media screen and (max-width : 992px) {
+    .newBody{
+        .newContent{
+            width: 100%;
+            height: 100%;
+            top:50%;
+            left: 50%;
+        }
+    }
+}
+@media screen and (max-width : 295px) {
+    .newBody{
+        .newContent{
+            .logoUstudy{
+                img{
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+@media screen and (width:1024px) and (height: 1366px) {
+    .newBody{
+        .newContent{
+            width: 100%;
+            height: 100%;
+            top:50%;
+            left: 50%;
+            
+        }
+    }
+}
+@media screen and (width:1024px) and (height: 600px) {
+    .newBody{
+        .newContent{
+            width: 100%;
+            height: 100%;
+            top:50%;
+            left: 50%;
+            
+        }
+    }
+}
+
+@media screen and (width:1280px) and (height: 800px) {
+    .newBody{
+        .newContent{
+            width: 40%;
+            height: 98%;
+            
         }
     }
 }

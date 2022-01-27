@@ -49,7 +49,121 @@
 
     </header>
 
-    <section   th:replace = "userCost::cost" ></section>
+    <section th:fragment="cost" id="cost" class="cost">
+        <div class="container-fluid">
+          <div class="row cost_content bg-light ">
+            <div class="cost_left col-8 boder ">
+              
+              <iframe id="iframe" width="100%" height="100%" src="https://www.youtube.com/embed/tLQLa6lM3Us"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen></iframe>
+            </div>
+            <div class="cost_right col-3 border bg-light ">
+    
+              <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example"
+                tabindex="0">
+    
+                <div class="card mt-3 " onclick="mysqlCostClick()">
+                  <div class="row">
+    
+    
+                    <div class="card-left cost_1 col-7">
+    
+                    </div>
+                    <div class="card-right col-5">
+                      <p>The Ultimate MySQL Bootcamp: Go from SQL Beginner to Expert</p>
+                      <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mt-3 " onclick="excelCostClick()">
+    
+                  <div class="row">
+    
+                    <div class="card-left cost_2 col-7">
+    
+                    </div>
+                    <div class="card-right col-5">
+                      <p>Microsoft Excel - Excel from Beginner to Advanced</p>
+                      <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                    </div>
+                  </div>
+                </div>
+    
+                <div class="card mt-3">
+    
+                  <div class="row">
+    
+                    <div class="card-left cost_3 col-7">
+    
+                    </div>
+                    <div class="card-right col-5">
+                      <p>
+                        Advanced CSS and Sass: Flexbox, Grid, Animations and More!</p>
+                      <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mt-3">
+    
+                  <div class="row">
+    
+                    <div class="card-left cost_4 col-7">
+    
+                    </div>
+                    <div class="card-right col-5">
+                      <p>Manga Art School: How to draw Anime and Manga Course</p>
+                      <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mt-3">
+    
+                  <div class="row">
+    
+                    <div class="card-left cost_5 col-7">
+    
+                    </div>
+                    <div class="card-right col-5">
+                      <p>Bootstrap Bootcamp (featuring Bootstrap 5)</p>
+                      <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mt-3">
+    
+                  <div class="row">
+    
+                    <div class="card-left cost_6 col-7">
+    
+                    </div>
+                    <div class="card-right col-5">
+                      <p>React - The Complete Guide (incl Hooks, React Router, Redux)</p>
+                      <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                    </div>
+                  </div>
+                </div>
+                <div class="card mt-3">
+    
+                  <div class="row">
+    
+                    <div class="card-left cost_7 col-7">
+    
+                    </div>
+                    <div class="card-right col-5">
+                      <p>Photoshop for Beginners - Learn by Doing</p>
+                      <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                    </div>
+                  </div>
+                </div>
+    
+    
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
 
 
     <section class="info" id="info">

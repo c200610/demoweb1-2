@@ -1,10 +1,16 @@
 package haupx912.demoweb1.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 import javax.persistence.UniqueConstraint;
 
@@ -23,7 +29,9 @@ public class Course {
         private Long price;
         @Column(name = "author")
         private String author;
-
+        @ManyToMany( cascade = CascadeType.ALL)
+        @JoinTable(name = "users_corses", joinColumns = @JoinColumn(name = "course_id"), inverseJoinColumns = @JoinColumn(name = "user_id"))
+        private List<User> users;
         
         public Course() {
         }

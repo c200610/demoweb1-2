@@ -9,12 +9,12 @@
     <link th:fragment="main-bootstrap" rel="stylesheet"
         th:href="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css}"
         integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-    <link th:fragment="main-css" th:href="@{/home/css/main.css}" rel="stylesheet">
     <!-- typed.js -->
     <link th:fragment="main-highlight" rel="stylesheet"
         th:href="@{https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css}">
 
 
+    <link th:fragment="main-css" th:href="@{/home/css/main.css}" rel="stylesheet">
 
 
 
@@ -23,7 +23,7 @@
 </head>
 
 <body>
-    <header>
+    <header id="header">
         <nav class="myNavbar navbar navbar-expand-md navbar-light ">
             <div class="col-2 col-sm-2 d-md-none myNavbar__dropdown">
                 <button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -72,29 +72,37 @@
                     </li>
 
                     <li class="nav-item myNavbar__cart">
-                        <a class="nav-link " href="#"><i class="fa fa-shopping-cart"></i><span><p>0
-                            
-                        </p></span></a>
+                        <a class="nav-link " href="#"><i class="fa fa-shopping-cart"></i><span>
+                                <p>0
+
+                                </p>
+                            </span></a>
                     </li>
 
                     <div class="dropdown nav-item myNavbar__buttons">
-                        <button class=" dropdown-toggle button button--red" type="button" id="dropdownMenuUser" data-toggle="dropdown" aria-expanded="false" th:text="${#authentication.name}">
-                            
+                        <button class=" dropdown-toggle button button--red" type="button" id="dropdownMenuUser"
+                            data-toggle="dropdown" aria-expanded="false" th:text="${#authentication.name}">
+
                         </button>
                         <div class="dropdown-menu" aria-labelledby="dropdownMenuUser">
-                          <a class="dropdown-item" th:href="@{/info/{username}(username = ${#authentication.name})}">Information <i class="fa fa-user-edit"></i></a>
-                          <a class="dropdown-item" th:href="@{logout}">Log Out <i class="fa fa-sign-out-alt"></i></a>
+                            <a class="dropdown-item"
+                                th:href="@{/info/{username}(username = ${#authentication.name})}">Information <i
+                                    class="fa fa-user-edit"></i></a>
+                            <a class="dropdown-item" th:href="@{logout}">Log Out <i class="fa fa-sign-out-alt"></i></a>
                         </div>
-                      </div>
+                    </div>
                 </ul>
             </div>
         </nav>
 
     </header>
+
+
+
     <section class="cover">
         <div class="cover__content">
             <h2>Learn on your schedule</h2>
-            <p>Study any topic, anytime. Explore thousands of courses for as low as $19.99
+            <p>Study any topic, anytime. Explore thousands of courses for as low as $<span class="counter">19.99</span>
 
             </p>
             <form class="cover__form">
@@ -120,7 +128,7 @@
                             <i class="fa fa-bullseye"></i>
                         </div>
                         <div class="intro__detail">
-                            <p>80,000 online courses</p>
+                            <p ><span class="counter">80.000</span> online courses</p>
                             <p>Explore a variety of fresh topics</p>
                         </div>
                     </div>
@@ -187,10 +195,15 @@
         <div class="courses__content">
             <div class="row">
                 <div class="col-4 courses__left">
-                    <div>
-                        <h2>The world's largest selection of courses</h2>
-                        <p>Choose from over 80,000 online video courses with new additions published every month</p>
-                    </div>
+                    
+                        <h4 id="video_course1" style="white-space:pre;"></h4>
+                    
+
+                    <video th:src="@{/home/video/kimetsu.mp4}" controls preload="auto" muted autoplay width="100%"
+                        loop></video>
+                    <!-- <h2>The world's largest selection of courses</h2>
+                        <p>Choose from over 80,000 online video courses with new additions published every month</p> -->
+
                 </div>
                 <div class="col-8">
                     <ul class="nav nav-tabs" id="myTab" role="tablist">
@@ -247,9 +260,9 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                
+                                                    $<span class="counter">9.99</span>
+                                                
                                             </div>
                                         </div>
                                     </div>
@@ -275,9 +288,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -304,9 +315,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -333,9 +342,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -362,9 +369,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -391,9 +396,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -419,9 +422,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -447,9 +448,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -475,9 +474,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -503,9 +500,7 @@
                                                 <span>
                                                     $179.99
                                                 </span>
-                                                <span>
-                                                    $9.99
-                                                </span>
+                                                $<span class="counter">9.99</span>
                                             </div>
                                         </div>
                                     </div>
@@ -556,9 +551,7 @@
                                 <span>
                                     $179.99
                                 </span>
-                                <span>
-                                    $9.99
-                                </span>
+                                $<span class="counter">9.99</span>
                             </div>
                         </div>
                     </div>
@@ -584,9 +577,7 @@
                                 <span>
                                     $179.99
                                 </span>
-                                <span>
-                                    $9.99
-                                </span>
+                                $<span class="counter">9.99</span>
                             </div>
                         </div>
                     </div>
@@ -613,9 +604,7 @@
                                 <span>
                                     $179.99
                                 </span>
-                                <span>
-                                    $9.99
-                                </span>
+                                $<span class="counter">9.99</span>
                             </div>
                         </div>
                     </div>
@@ -642,9 +631,7 @@
                                 <span>
                                     $179.99
                                 </span>
-                                <span>
-                                    $9.99
-                                </span>
+                                $<span class="counter">9.99</span>
                             </div>
                         </div>
                     </div>
@@ -671,9 +658,7 @@
                                 <span>
                                     $179.99
                                 </span>
-                                <span>
-                                    $9.99
-                                </span>
+                                $<span class="counter">9.99</span>
                             </div>
                         </div>
                     </div>
@@ -700,9 +685,7 @@
                                 <span>
                                     $179.99
                                 </span>
-                                <span>
-                                    $9.99
-                                </span>
+                                $<span class="counter">9.99</span>
                             </div>
                         </div>
                     </div>
@@ -802,10 +785,10 @@
 
                         <div class="students__top">
                             <div class="students__avatar">
-                                <img src="/home/img/s1.jpg" alt="s1">
+                                <img src="/home/img/tanziro.png" alt="s1">
                             </div>
                             <div class="students__star">
-                                <p>Mrinal</p>
+                                <p>竈門　炭治郎</p>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -829,10 +812,10 @@
 
                         <div class="students__top">
                             <div class="students__avatar">
-                                <img src="/home/img/s2.jpg" alt="s2">
+                                <img src="/home/img/rengoku2.jpg" alt="s2">
                             </div>
                             <div class="students__star">
-                                <p>Estelle</p>
+                                <p>煉獄 杏寿郎</p>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -857,10 +840,10 @@
                     <div class="students__itemBody">
                         <div class="students__top">
                             <div class="students__avatar">
-                                <img src="/home/img/s3.jpg" alt="s3">
+                                <img src="/home/img/nezuko1.jpg" alt="s3">
                             </div>
                             <div class="students__star">
-                                <p>Flávio</p>
+                                <p>竈門 禰豆子</p>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -885,10 +868,10 @@
 
                         <div class="students__top">
                             <div class="students__avatar">
-                                <img src="/home/img/s4.jpg" alt="s4">
+                                <img src="/home/img/zenitsu.jpeg" alt="s4">
                             </div>
                             <div class="students__star">
-                                <p>Angeles</p>
+                                <p>我妻 善逸</p>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -912,10 +895,10 @@
 
                         <div class="students__top">
                             <div class="students__avatar">
-                                <img src="/home/img/s5.jpg" alt="s5">
+                                <img src="/home/img/gojo.jpg" alt="s5">
                             </div>
                             <div class="students__star">
-                                <p>Carol</p>
+                                <p>五 条 悟 </p>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -939,11 +922,11 @@
 
                         <div class="students__top">
                             <div class="students__avatar">
-                                <img src="/home/img/s6.jpg" alt="s6">
+                                <img src="/home/img/itadori.jpg" alt="s6">
                             </div>
 
                             <div class="students__star">
-                                <p>Oscar Javier</p>
+                                <p>虎杖 悠仁</p>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
                                 <i class="fa fa-star"></i>
@@ -1102,14 +1085,20 @@
     <!-- Typed js -->
     <script type="text/javascript"
         th:src="@{https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js}"></script>
+
     <script type="text/javascript" th:src="@{home/js/typed.min.js}"></script>
+    <!-- JS JQUERY -->
     <script type="text/javascript" th:src="@{https://code.jquery.com/jquery-3.5.1.slim.min.js}"
         integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
         crossorigin="anonymous"></script>
+    <script type="text/javascript" th:src = "@{/home/js/jquery.waypoints.min.js}"></script>
+    <!-- js countup -->
+    <script type="text/javascript" th:src = "@{/home/js/jquery.countup.min.js}"></script>
     <script type="text/javascript"
         th:src="@{https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js}"
         integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
         crossorigin="anonymous"></script>
+
     <script type="text/javascript" th:replace="common::carousel-js"></script>
     <script>
         $('.courses__carousel').owlCarousel({
@@ -1148,6 +1137,9 @@
         })
     </script>
     <script>
+        	$('.counter').countUp();
+    </script>
+    <script>
         $('.students__carousel').owlCarousel({
             loop: true,
             margin: 15,
@@ -1166,6 +1158,17 @@
         })
     </script>
     <script type="text/javascript">
+        var typed6 = new Typed('#video_course1', {
+            strings: [' Animation is great, is not that great?^1000\n `Take the course and you will do it !!!`'],
+            typeSpeed: 20,
+            backSpeed: 0,
+            loop: false
+        });
+
+
+    </script>
+
+    <script type="text/javascript">
         // Designer : Nguyen Chung Hau^1000\n `Class: 2k` ^1000\n `Student_code: C200610`
         var typed6 = new Typed('#course_modal_designer', {
             strings: ['- Designer : Nguyen Chung Hau\n `- Class: 2k` \n `- Student_code: C200610`'],
@@ -1175,17 +1178,17 @@
         });
 
     </script>
-     <script>
-         var typed4 = new Typed('#cover_search', {
-        strings: ['Do you want to learn ?', ' You cant search here !!!'],
-        typeSpeed: 40,
-        backSpeed: 4,
-        attr: 'placeholder',
-        bindInputFocusEvents: true,
-        loop: true
-      });
-        
-     </script>
+    <script>
+        var typed4 = new Typed('#cover_search', {
+            strings: ['Do you want to learn ?', ' You cant search here !!!'],
+            typeSpeed: 40,
+            backSpeed: 4,
+            attr: 'placeholder',
+            bindInputFocusEvents: true,
+            loop: true
+        });
+
+    </script>
 
     <script type="text/javascript" th:src="@{/home/js/main.js}"></script>
 </body>

@@ -1,10 +1,9 @@
 package haupx912.demoweb1.model;
 
-import java.util.Collection;
+import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -17,10 +16,14 @@ import javax.validation.constraints.NotNull;
 
 import org.springframework.validation.annotation.Validated;
 
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 @Validated
 @Entity
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "user", uniqueConstraints = @UniqueConstraint(columnNames = "user_name"))
 public class User {
         @Id
@@ -54,16 +57,16 @@ public class User {
         @Column(name = "password")
         private String password;
 
-        @ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-        @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "role_id", referencedColumnName = "id"))
-        private Collection<Role> roles;
+        @ManyToMany( cascade = CascadeType.ALL)
+        @JoinTable(name = "users_roles", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+        private List<Role> roles;
 
-        @ManyToMany( fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-        @JoinTable(name = "users_corses", joinColumns = @JoinColumn(name = "user_id", referencedColumnName = "id"), inverseJoinColumns = @JoinColumn(name = "course_id", referencedColumnName = "id"))
-        private Collection<Course> courses;
+        @ManyToMany( cascade = CascadeType.ALL)
+        @JoinTable(name = "users_corses", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "course_id"))
+        private List<Course> courses;
         
-        public User() {
-        }
+        // public User() {
+        // }
 
         public User(String firstName, String lastName, Long age, String tel, String address, String gender,
                         String schools, String userName, String password) {
@@ -80,22 +83,25 @@ public class User {
 
         }
 
-        public User(String firstName, String lastName, Long age, String tel, String address, String gender,
-                        String schools, String userName, String password,Collection<Role> roles, Collection<Course> courses) {
-                                super();
-
-                this.firstName = firstName;
-                this.lastName = lastName;
-                this.age = age;
-                this.tel = tel;
-                this.address = address;
-                this.gender = gender;
-                this.schools = schools;
-                this.userName = userName;
-                this.password = password;
-                this.roles = roles;
-                this.courses = courses;
+        public void setRoles(java.util.List<Role> asList) {
         }
+
+        // public User(String firstName, String lastName, Long age, String tel, String address, String gender,
+        //                 String schools, String userName, String password,Collection<Role> roles, Collection<Course> courses) {
+        //                         super();
+
+        //         this.firstName = firstName;
+        //         this.lastName = lastName;
+        //         this.age = age;
+        //         this.tel = tel;
+        //         this.address = address;
+        //         this.gender = gender;
+        //         this.schools = schools;
+        //         this.userName = userName;
+        //         this.password = password;
+        //         this.roles = roles;
+        //         this.courses = courses;
+        // }
         
 
 }

@@ -14,10 +14,13 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import haupx912.demoweb1.UserRegistration.UserRegistration;
+import haupx912.demoweb1.model.Course;
 import haupx912.demoweb1.model.User;
 import haupx912.demoweb1.repository.UserRepository;
 import haupx912.demoweb1.service.UserService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.web.bind.annotation.RequestBody;
+
 
 
 @Controller
@@ -39,6 +42,20 @@ public class MainController {
    
         return "index";
     }
+    // @PostMapping("/{username}")
+    // public String postMethodName(@PathVariable(name = "username") String username , @ModelAttribute("course") Course course) {
+    //     User user = userRepository.findByUserName(username);
+        
+    //     // Optional<User> userDb = userRepository.findById(user.getId());
+    //     // if (userDb.isEmpty()) {
+    //     //     log.error("Can't find user by id {}", user.getId());
+    //     //     return "index";
+    //     // }
+    //     user.getCourses().add(course);
+    //     userRepository.save(user);
+    //     return "index";
+    // }
+    
     @GetMapping("/info/{username}")
     public ModelAndView getInfomation(@PathVariable(name = "username")String username){
         ModelAndView mav = new ModelAndView("info");

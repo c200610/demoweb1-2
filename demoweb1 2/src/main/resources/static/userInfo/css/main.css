@@ -59,6 +59,7 @@ body {
       align-items: flex-end;
       overflow: auto; }
       .cost .cost_content .cost_right .card {
+        cursor: pointer;
         padding: 0;
         margin-bottom: 1rem; }
         .cost .cost_content .cost_right .card .row {

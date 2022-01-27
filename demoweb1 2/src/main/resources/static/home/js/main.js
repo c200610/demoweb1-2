@@ -47,3 +47,17 @@ function onloadCartNumber(){
     }
 }
 onloadCartNumber();
+
+
+// function headerFix(){
+//     window.onscroll = function () {
+        
+//         if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+//             document.getElementById("header").style.transform = "translate(0,0)";
+//         } else {
+//             document.getElementById("header").style.transform = "translate(0,0)";
+//         }
+//     }
+
+// }
+// headerFix();

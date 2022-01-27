@@ -13,11 +13,20 @@
                 padding: 0 2rem;
                 display: flex;
                 align-items: center;
-
-                h2 {
-                    @include styleText($color-black-0, $fs-3 + 1, $fw-0);
+                h4{
+                    position: absolute;
+                    top: 10px;
+                    
                 }
-
+            
+                video {
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                }
+                // h2 {
+                //     @include styleText($color-black-0, $fs-3 + 1, $fw-0);
+                // }
             }
 
             #myTab {
@@ -37,9 +46,6 @@
                     }
                 }
             }
-
-
         }
-
     }
 }

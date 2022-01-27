@@ -42,7 +42,7 @@
 					th:object="${user}" method="post">
 
 
-					<div class="col-md-5">
+					<div class="col-md-6">
 						<input type="text" class="form-control" id="validationCustom01" th:field="*{firstName}"
 							placeholder="First Name" required>
 						<div class="invalid-feedback">
@@ -51,7 +51,7 @@
 					</div>
 
 
-					<div class="col-md-5">
+					<div class="col-md-6">
 
 						<input type="text" class="form-control" id="validationCustom02" th:field="*{lastName}"
 							placeholder="Last Name" required>
@@ -60,7 +60,7 @@
 						</div>
 					</div>
 
-					<div class="col-md-2">
+					<div class="col-6 col-sm-3 col-lg-6 col-xxl-3">
 
 						<div class="input-group has-validation">
 							<input type="text" class="form-control" th:field="*{age}" placeholder="Age"
@@ -71,17 +71,9 @@
 						</div>
 					</div>
 
-					<div class="col-md-6">
-
-						<input type="text" class="form-control" id="validationCustom03" th:field="*{address}"
-							placeholder="Address" required>
-						<div class="invalid-feedback">
-							Please provide a valid address.
-						</div>
-					</div>
-
-					<div class="col-md-3">
-
+					
+					<div class="col-6 col-sm-3 col-lg-6 col-xxl-3">
+						
 						<select class="form-select" id="validationCustom04" th:field="*{gender}" required>
 							<option th:value="'male'">Male</option>
 							<option th:value="'female'">Female</option>
@@ -90,17 +82,25 @@
 							Please select your gender.
 						</div>
 					</div>
-
-
-					<div class="col-md-3">
-
+					
+					
+					<div class="col-12 col-sm-6 col-lg-12 col-xxl-6">
+						
 						<input type="text" class="form-control" id="phone" name="phone" th:field="*{tel}"
-							placeholder="Tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
+						placeholder="Tel" pattern="[0-9]{3}-[0-9]{4}-[0-9]{4}" required>
 						<div class="invalid-feedback">
 							Please provide a valid tel.
 						</div>
 					</div>
+					
+					<div class="col-md-12">
 
+						<input type="text" class="form-control" id="validationCustom03" th:field="*{address}"
+							placeholder="Address" required>
+						<div class="invalid-feedback">
+							Please provide a valid address.
+						</div>
+					</div>
 
 
 					<div class="col-md-12">

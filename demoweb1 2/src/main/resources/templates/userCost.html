@@ -7,6 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
 </head>
 
 <body>
@@ -14,14 +15,20 @@
     <div class="container-fluid">
       <div class="row cost_content bg-light ">
         <div class="cost_left col-8 boder ">
-             <iframe width="100%" height="100%" src="https://www.youtube.com/embed/tLQLa6lM3Us" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <video id="iframe" >
+            <source th:src="@{/userInfo/video/zenitsu_theme.mp4}" type="video/mp4">
+          </video>
+          <!-- <iframe id="iframe" width="100%" height="100%" src="https://www.youtube.com/embed/tLQLa6lM3Us"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe> -->
         </div>
         <div class="cost_right col-3 border bg-light ">
 
           <div data-bs-spy="scroll" data-bs-target="#list-example" data-bs-offset="0" class="scrollspy-example"
             tabindex="0">
 
-            <div class="card mt-3 container">
+            <div class="card mt-3 " onclick="mysqlCostClick()">
               <div class="row">
 
 
@@ -34,7 +41,7 @@
                 </div>
               </div>
             </div>
-            <div class="card mt-3">
+            <div class="card mt-3 ">
 
               <div class="row">
 
@@ -44,6 +51,7 @@
                 <div class="card-right col-5">
                   <p>Microsoft Excel - Excel from Beginner to Advanced</p>
                   <span> </i>Nguyen Chung Hau <i class="fa fa-check-circle"></i></span>
+                  <button onclick="excelCostClick()">as</button>
                 </div>
               </div>
             </div>
@@ -121,10 +129,11 @@
       </div>
     </div>
   </section>
+
   <script type="text/javascript" th:replace="common::ajax-js"></script>
   <script type="text/javascript" th:replace="common::carousel-js"></script>
   <script type="text/javascript" th:replace="common::bootstrap-js"></script>
-  <script type="text/javascript" th:fragment="signup-js" th:src="@{/login/js/main.js}"></script>
+  <script type="text/javascript" src="@{/userInfo/js/cost.js}"></script>
 </body>
 
 </html>
