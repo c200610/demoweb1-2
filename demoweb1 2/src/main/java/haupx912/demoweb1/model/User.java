@@ -86,22 +86,5 @@ public class User {
         public void setRoles(java.util.List<Role> asList) {
         }
 
-        // public User(String firstName, String lastName, Long age, String tel, String address, String gender,
-        //                 String schools, String userName, String password,Collection<Role> roles, Collection<Course> courses) {
-        //                         super();
-
-        //         this.firstName = firstName;
-        //         this.lastName = lastName;
-        //         this.age = age;
-        //         this.tel = tel;
-        //         this.address = address;
-        //         this.gender = gender;
-        //         this.schools = schools;
-        //         this.userName = userName;
-        //         this.password = password;
-        //         this.roles = roles;
-        //         this.courses = courses;
-        // }
-        
-
+ 
 }

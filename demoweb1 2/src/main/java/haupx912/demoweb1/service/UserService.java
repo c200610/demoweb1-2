@@ -2,8 +2,10 @@ package haupx912.demoweb1.service;
 
 
 
-import org.springframework.security.core.userdetails.UserDetailsService;
+import java.util.Optional;
 
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.stereotype.Service;
 
 import haupx912.demoweb1.model.User;
 import haupx912.demoweb1.UserRegistration.UserRegistration;

@@ -1,6 +1,7 @@
 package haupx912.demoweb1.service;
 
 import java.util.Arrays;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -12,8 +13,10 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
+import haupx912.demoweb1.model.Course;
 import haupx912.demoweb1.model.Role;
 import haupx912.demoweb1.model.User;
+import haupx912.demoweb1.repository.CourseRepository;
 import haupx912.demoweb1.repository.RoleRepository;
 import haupx912.demoweb1.repository.UserRepository;
 import haupx912.demoweb1.UserRegistration.UserRegistration;
@@ -26,7 +29,8 @@ public class UserServiceImpl implements UserService {
     private UserRepository userRepository;
     @Autowired
     private RoleRepository roleRepository;
-   
+    @Autowired
+    private CourseRepository courseRepository;
 
     @Override
     public User save(UserRegistration userRegistration) {
@@ -35,6 +39,8 @@ public class UserServiceImpl implements UserService {
                 userRegistration.getSchools(), userRegistration.getUserName(), userRegistration.getPassword());
                Role role = roleRepository.getById(1l);
                user.setRoles(Arrays.asList(role));
+               Course course = courseRepository.getById(1l);
+               user.setCourses(Arrays.asList(course));
         return userRepository.save(user);
     }
 

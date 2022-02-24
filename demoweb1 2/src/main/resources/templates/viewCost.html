@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="https://www.thymeleaf.org"
+  xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head th:replace="common::meta-header('Log In',~{::login-css},~{::login-theme},~{::login-bootstrap},~{::login-js})">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+
+
+
+  <script type="text/javascript" th:replace="common::ajax-js"></script>
+  <script type="text/javascript" th:replace="common::carousel-js"></script>
+  <script type="text/javascript" th:replace="common::bootstrap-js"></script>
+  <script type="text/javascript" src="@{/userInfo/js.js}"></script>
+</body>
+
+</html>

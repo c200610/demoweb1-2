@@ -29,14 +29,19 @@
             }
         }
 
-        .myNavbar__form-search {
-            flex-grow: 8;
-            @include styleSearch($color-white-cream, $color-white-0, $color-grey-4);
-        }
+      
     }
 
     .myNavbar__right {
+        display: flex;
+        align-items: center;
+
+        .myNavbar__form-search {
+
+            @include styleSearch($color-white-cream, $color-white-0, $color-grey-4);
+        }
         .navbar-nav {
+
             justify-content: space-between;
             align-items: center;
 
@@ -86,6 +91,7 @@
             }
 
             .myNavbar__cart {
+
                 width: 50px;
                 height: 50px;
                 line-height: 20px;
@@ -114,6 +120,7 @@
             }
 
             .myNavbar__buttons {
+
                 display: flex;
 
                 &:hover {
@@ -175,10 +182,7 @@
 }
 
 @include responsive("extra-large") {
-    .business,
-    .instructor {
-        display: none;
-    }
+    
 
     .myNavbar {
         .myNavbar__right {
@@ -193,23 +197,23 @@
     .myNavbar {
         flex-wrap: nowrap;
 
-        .myNavbar__dropdown {
-            text-align: center;
-        }
+        // .myNavbar__dropdown {
+        //     text-align: center;
+        // }
 
         .myNavbar__left {
-            .myNavbar__categories,
-            .myNavbar__form-search {
+            .myNavbar__categories{
                 display: none;
             }
         }
 
         .myNavbar__right {
+            background-color: black;
             .navbar-nav {
                 text-align: right;
 
                 .myNavbar__buttons {
-                    display: none;
+                    // display: none;
                 }
             }
         }

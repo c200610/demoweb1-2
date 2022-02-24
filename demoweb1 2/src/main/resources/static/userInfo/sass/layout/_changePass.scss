@@ -1,0 +1,38 @@
+#changePass{
+    position: absolute;
+    background-size: cover;
+        height: 830px;
+        top: 97px;
+        left: 0;
+        width: 100%;
+    background: url("/userInfo/img/changePass.jpeg") no-repeat;
+    background-size: cover;
+    .changePass_body{
+        width: 50%;
+        background-color: #f1f1f1;
+        transform: translate(50%, 50%);
+        padding: 40px;
+        // #newPassword{
+        //     margin-top: 15px;
+        // }
+        #newPassword_content{
+            position: relative;
+            display: flex;
+            margin-top: 15px;
+            .showPass{
+                position: absolute;
+                top: 0;
+                right: 0;
+                padding: 6px 12px;
+                margin-right: 5px;
+                color: #758882;
+                cursor: pointer;
+            }
+        }
+        .submit{
+            display: flex;
+            margin: 20px auto;
+            padding: 5px 30px;
+         }
+}
+}

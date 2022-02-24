@@ -1,6 +1,11 @@
 package haupx912.demoweb1.UserRegistration;
 
 
+
+import java.util.Arrays;
+import java.util.List;
+
+import haupx912.demoweb1.model.Course;
 import haupx912.demoweb1.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -19,6 +24,7 @@ public class UserRegistration {
     private String schools;
     private String userName;
     private String password;
+    private List<Course> courses;
 
     public User updateUserInfo(User user){
         user.setFirstName(this.firstName);
@@ -29,7 +35,14 @@ public class UserRegistration {
         user.setGender(this.gender);
         user.setSchools(this.schools);
         // user.setPassword(newPassword);
-        
+        return user;
+    }
+    public User updatePass(User user){
+        user.setPassword(this.password);
+        return user;
+    }
+    public User addCourse(User user,Course course){
+        user.setCourses(Arrays.asList(course));
         return user;
     }
 }

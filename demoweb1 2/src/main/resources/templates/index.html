@@ -32,7 +32,7 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
             </div>
-            <div class="col-xl-7 col-lg-9 col-md-8 col-sm-8 col-6 myNavbar__left">
+            <div class="col-xl-3 col-lg-9 col-md-8 col-sm-8 col-6 myNavbar__left">
 
                 <img src="/home/img/1.png" alt="logo">
                 <!-- <a class="navbar-brand">
@@ -41,7 +41,11 @@
                     <i class="fa fa-th"></i>
                     <span>Categories</span>
                 </div>
-                <form class="myNavbar__form-search">
+
+
+            </div>
+            <div class="col-xl-9 col-lg-3 col-md-4 col-sm-2 col-6 myNavbar__right collapse navbar-collapse"  id="navbarSupportedContent">
+                <form class="myNavbar__form-search col-xl-6">
                     <div class="input-group">
                         <input type="text" class="form-control" placeholder="Search for Courses">
                         <div class="input-group-append">
@@ -51,11 +55,7 @@
                         </div>
                     </div>
                 </form>
-
-            </div>
-            <div class="col-xl-5 col-lg-3 col-md-4 col-sm-2 col-6 myNavbar__right">
-
-                <ul class="navbar-nav mr-auto">
+                <ul class="navbar-nav mr-auto col-xl-6">
                     <li class="nav-item active business">
                         <a class="nav-link" href="#development">Ustudy for Development </a>
                         <div class="overlay">
@@ -177,12 +177,13 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <!-- Designer : c200610_2k_Nguyen Chung Hau -->
                     <span id="course_modal_designer" style="white-space:pre;"></span>
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary add-cart">Add to cart</button>
+                    <form th:action="@{/addCourse{username}(username = ${#authentication.name})/{2}}"  method="get">
+                        <button type="submit" class="btn btn-primary add-cart">Add to cart</button>
+                    </form>
+
                 </div>
             </div>
         </div>
